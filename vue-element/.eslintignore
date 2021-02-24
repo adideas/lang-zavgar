@@ -1,0 +1,8 @@
+build
+src/assets
+public
+node_modules
+.gitignore
+.github
+tests
+plop-templates

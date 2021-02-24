@@ -1,0 +1,13 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run dev --prefix vue-element",
+        "prod": "npm run build:prod --prefix vue-element",
+        "stage": "npm run build:stage --prefix vue-element"
+    },
+    "devDependencies": {},
+    "dependencies": {
+        "flag-icon-css": "^3.5.0",
+        "generate-password": "^1.6.0"
+    }
+}
