@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\User;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -47,7 +48,9 @@ class UserController extends Controller
         $data['email'] = $request->input('email');
 
         if($request->has('password') && $request->input('password')) {
-            $data['password'] = bcrypt($request->input('password'));
+            if(Hash::check($request->input('confirm_password'), $user->password)) {
+                $data['password'] = bcrypt($request->input('password'));
+            }
         }
 
         return $user->update($data);

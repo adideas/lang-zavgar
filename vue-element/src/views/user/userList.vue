@@ -19,7 +19,7 @@
       <el-table-column prop="name" label="name" />
       <el-table-column label="last time">
         <template slot-scope="row">
-          <el-col>{{ row.row.last_login_at | humanDate }}</el-col>
+          <el-col v-if="row.row.last_login_at">{{ row.row.last_login_at | humanDate }}</el-col>
         </template>
       </el-table-column>
 

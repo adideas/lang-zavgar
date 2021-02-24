@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81654e0a-77d3-4949-89ca-6e5e2e4e2a10" name="Default Changelist" comment="" />
+    <list default="true" id="81654e0a-77d3-4949-89ca-6e5e2e4e2a10" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/views/user/userEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/user/userEdit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/views/user/userList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/user/userList.vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -221,7 +226,7 @@
       <workItem from="1613315560776" duration="8821000" />
       <workItem from="1613324905051" duration="48670000" />
       <workItem from="1613543809212" duration="465000" />
-      <workItem from="1614168680991" duration="2833000" />
+      <workItem from="1614168680991" duration="4792000" />
     </task>
     <servers />
   </component>
@@ -284,10 +289,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="601" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613385104740" />
-    <state x="513" y="188" width="952" height="566" key="find.popup" timestamp="1613401698517">
+    <state x="513" y="188" width="952" height="566" key="find.popup" timestamp="1614174634188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="513" y="188" width="952" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613401698517" />
+    <state x="513" y="188" width="952" height="566" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614174634188" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613412648570">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

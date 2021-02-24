@@ -25,6 +25,14 @@
         </el-input>
       </el-form-item>
 
+      <el-form-item label="Старый пароль">
+        <el-input v-model="form.confirm_password" :type="show_password ? 'text' : 'password'">
+          <template slot="append">
+            <el-button icon="el-icon-view" @click="show_password = !show_password" />
+          </template>
+        </el-input>
+      </el-form-item>
+
     </el-form>
 
   </div>
@@ -41,6 +49,7 @@ export default {
       form: {
         email: '',
         password: '',
+        confirm_password: '',
         name: ''
       }
     }
