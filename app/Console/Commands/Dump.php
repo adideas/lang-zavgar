@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Models\File;
+use App\Models\Helpers\FileTrait;
 use App\Models\Translate;
 use App\User;
 use App\UserAccess;
@@ -11,6 +13,8 @@ use Illuminate\Support\Str;
 
 class Dump extends Command
 {
+    use FileTrait;
+
     protected $signature   = 'dd';
 
     protected $description = 'Command description';
@@ -22,37 +26,7 @@ class Dump extends Command
 
     public function handle()
     {
-        dd(UserAccess::get());
-
-        /*$coder = new ENVFileCoder('C:\OSPanel\domains\lang.zavgar.online\storage\back\ru\auth.env');
-
-        $coder->set(['b','d','c','g','e'], 10)->set(['b','d','h','g','e'], 10)->set(['h','d','c','g','e'], 10)->save();
-
-        dd();
-        dd(FileType::get());*/
-
-        /*Translate::create(
-            [
-                'key_id' => 3,
-                'file_id' => 4,
-                '01'     => Str::random(10),
-            ]
-        );*/
-
-        $translate = Translate::first();
-
-        dump($translate);
-
-        $translate->update([
-            '02' => Str::random(10)
-                           ]);
-
-        /*$translate = Translate::find(10);
-
-        $translate->update([
-                               '02' => Str::random(10)
-                           ]);*/
-        // dd(($translate->storage(1))->set(['test','d'], 'key'));
+        $this->rePathChildrenFile(File::find(3));
     }
 }
 

@@ -3,7 +3,8 @@
     <transition name="fade-transform" mode="out-in">
       <keep-alive :include="cachedViews">
         <!--<router-view :key="key" />-->
-        <div class="app-container">
+        <!--<div class="app-container">-->
+        <div>
           <router-view />
         </div>
       </keep-alive>

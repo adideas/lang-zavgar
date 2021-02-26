@@ -8,13 +8,21 @@ class PhpFileCoder extends FileCoderAbstract
 {
     protected function file_recoding(string $path): array
     {
-        if(file_exists($path)) {
-            $file = file_get_contents($path);
-            if($file[0] ?? '' == '<') {
-                return include ($path);
+        function init($path) {
+            try {
+                if(file_exists($path)) {
+                    $file = file_get_contents($path);
+                    if($file[0] ?? '' == '<') {
+                        return include ($path);
+                    }
+                }
+                return [];
+            } catch (\Exception $e) {
+                return [];
             }
         }
-        return [];
+
+        return init($path) ?: [];
     }
 
     public function set(array $indexed, $value): FileCoderAbstract

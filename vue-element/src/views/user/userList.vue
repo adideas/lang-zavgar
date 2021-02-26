@@ -1,5 +1,5 @@
 <template>
-  <div v-loading="loading">
+  <div v-loading="loading" class="app-container">
 
     <header-sticky title="Пользователи">
       <template slot="prepend">

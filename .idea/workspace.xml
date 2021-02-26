@@ -5,8 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81654e0a-77d3-4949-89ca-6e5e2e4e2a10" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/lang.zavgar.online.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lang.zavgar.online.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Dump.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Dump.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/File.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Helpers/FileTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Helpers/FileTrait.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Key.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Key.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Translate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Translate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/FileCoder/JSONFileCoder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/FileCoder/JSONFileCoder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/FileCoder/JsFileCoder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/FileCoder/JsFileCoder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/FileCoder/PhpFileCoder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/FileCoder/PhpFileCoder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artisan" beforeDir="false" afterPath="$PROJECT_DIR$/artisan" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/queue.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/queue.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/session.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/session.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/lang/back/en/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/lang/back/ru/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/icons/svg/dashboard.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/icons/svg/dashboard.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/icons/svg/driver.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/icons/svg/driver.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/icons/svg/language.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/icons/svg/language.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/layout/components/AppMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/layout/components/AppMain.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/views/user/userCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/user/userCreate.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-element/src/views/user/userEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/user/userEdit.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-element/src/views/user/userList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/user/userList.vue" afterDir="false" />
     </list>
@@ -174,7 +197,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.ns.project" value="true" />
     <property name="js.ns.project.flavor" value="JavaScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/classes/FileCoder" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Filters/Filter" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -185,12 +208,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\OSPanel\domains\lang.zavgar.online\app" />
-      <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Models" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Http\Filters\Filter" />
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Http\Filters" />
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src\views\files\components" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\app\classes\FileCoder" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Models" />
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\app" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
@@ -226,7 +252,7 @@
       <workItem from="1613315560776" duration="8821000" />
       <workItem from="1613324905051" duration="48670000" />
       <workItem from="1613543809212" duration="465000" />
-      <workItem from="1614168680991" duration="4792000" />
+      <workItem from="1614168680991" duration="59671000" />
     </task>
     <servers />
   </component>
@@ -238,49 +264,53 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="743" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613148409261" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1613323621516">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614256067037">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613323621516" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614256067037" />
     <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613318162909" />
-    <state x="1045" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613408188209">
+    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614345518031">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1045" y="158" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613408188209" />
+    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614345518031" />
     <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613146224407" />
-    <state width="915" height="235" key="GridCell.Tab.0.bottom" timestamp="1614169172726">
+    <state width="1876" height="232" key="GridCell.Tab.0.bottom" timestamp="1614318833975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="363" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613544278039" />
+    <state width="1876" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614318833975" />
     <state width="1876" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613319543383" />
     <state width="915" height="235" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="915" height="235" key="GridCell.Tab.0.center" timestamp="1614169172726">
+    <state width="1876" height="232" key="GridCell.Tab.0.center" timestamp="1614318833974">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="363" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613544278038" />
+    <state width="1876" height="232" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614318833974" />
     <state width="1876" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613319543383" />
     <state width="915" height="235" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="915" height="235" key="GridCell.Tab.0.left" timestamp="1614169172726">
+    <state width="1876" height="232" key="GridCell.Tab.0.left" timestamp="1614318833974">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="363" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613544278038" />
+    <state width="1876" height="232" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614318833974" />
     <state width="1876" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613319543383" />
     <state width="915" height="235" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="915" height="235" key="GridCell.Tab.0.right" timestamp="1614169172726">
+    <state width="1876" height="232" key="GridCell.Tab.0.right" timestamp="1614318833974">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="363" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613544278039" />
+    <state width="1876" height="232" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614318833974" />
     <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613319543383" />
     <state width="915" height="235" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state x="704" y="227" key="NewPhpClassDialog" timestamp="1613311374836">
+    <state x="704" y="227" key="NewPhpClassDialog" timestamp="1614250486992">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="704" y="227" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613311374836" />
+    <state x="704" y="227" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614250486992" />
     <state x="2624" y="227" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613147633471" />
     <state x="794" y="439" key="NewPhpFileDialog" timestamp="1613371091349">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613371091349" />
+    <state x="763" y="139" key="RollbackChangesDialog" timestamp="1614253149177">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="763" y="139" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614253149177" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1613321157014">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -289,15 +319,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="601" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613385104740" />
-    <state x="513" y="188" width="952" height="566" key="find.popup" timestamp="1614174634188">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2110" y="226" width="952" height="566" key="find.popup" timestamp="1614346420863">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="513" y="188" width="952" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613401698517" />
+    <state x="2110" y="226" width="952" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614346420863" />
     <state x="513" y="188" width="952" height="566" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614174634188" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613412648570">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614346427429">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613412648570" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614346427429" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613311496911" />
   </component>
   <component name="XDebuggerManager">

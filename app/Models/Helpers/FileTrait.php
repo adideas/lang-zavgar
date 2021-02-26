@@ -39,4 +39,68 @@ trait FileTrait
             return '';
         }
     }
+
+    public function rePathChildrenFile(File $file) {
+
+        $new_path = str_replace('//','/',"{$file->parent_file->path}/{$file->name}");
+        if ($file->is_file) {
+            $file->path = $new_path . '.'. strtolower($file->type->name);
+        } else {
+            $file->path = $new_path;
+        }
+        $file->save();
+
+        function file_child_rename($children, $parent_path) {
+            foreach ($children as $key => $child) {
+                $parent_path = "{$parent_path}/{$child->name}";
+
+                if ($child->is_file) {
+                    $child->path = $parent_path . '.'. strtolower($child->type->name);
+                } else {
+                    $child->path = $parent_path;
+                }
+
+                $child->save();
+
+                $children1 = $child->children;
+                if ($children1) {
+                    file_child_rename($children1, $parent_path);
+                }
+
+            }
+        }
+
+
+        $children = $file->children;
+        if ($children) {
+            file_child_rename($children, $new_path);
+        }
+    }
+
+    public function syncFolder() {
+        $root_file = File::where('root', 1)->first();
+        $storage_dir = \Illuminate\Support\Facades\File::allFiles(storage_path($root_file->name));
+        $files = [];
+        foreach ($storage_dir as $key => $file) {
+            $files[] = DIRECTORY_SEPARATOR .$root_file->name.DIRECTORY_SEPARATOR.strtolower($file->getRelativePathname());
+        }
+
+        Language::each(
+            function (Language $language) use (&$files) {
+                File::where('is_file', 1)->each(
+                  function (File $file) use (&$files, $language) {
+                      $path = $this->checkFile($file, $language);
+                      $path = str_replace(storage_path(), '', $path);
+                      $files = array_filter($files, fn($x) => $x != $path);
+                  }
+                );
+            }
+        );
+
+        dump($files);
+
+        foreach ($files as $_ => $file) {
+            \Illuminate\Support\Facades\File::delete(storage_path($file));
+        }
+    }
 }

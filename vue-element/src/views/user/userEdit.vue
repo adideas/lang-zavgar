@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-container">
 
     <header-sticky title="Редактирование пользователя">
       <template slot="prepend">

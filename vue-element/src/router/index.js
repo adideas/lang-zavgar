@@ -5,6 +5,7 @@ import constant_routes from '@/router/constant/constantRoutes'
 import dashboard from '@/router/menu/dashboard'
 import user from '@/router/menu/user'
 import translate from '@/router/menu/translate'
+import files from '@/router/menu/files'
 
 Vue.use(Router)
 
@@ -15,7 +16,8 @@ export const constantRoutes = [...constant_routes, {
   children: [
     ...dashboard,
     user,
-    translate
+    translate,
+    files
   ]
 }]
 

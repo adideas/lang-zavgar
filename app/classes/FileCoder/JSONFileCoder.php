@@ -8,7 +8,12 @@ class JSONFileCoder extends FileCoderAbstract
     {
         if(file_exists($path)) {
             $data = file_get_contents($path);
-            return json_decode(str_replace(['export default ', "\r\n"], ['', ''], $data), true);
+            try {
+                return (array)json_decode(str_replace(['export default ', "\r\n"], ['', ''], $data), true);
+            } catch (\Exception $e) {
+                return [];
+            }
+
         }
         return [];
     }

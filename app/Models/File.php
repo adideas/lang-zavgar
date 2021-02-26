@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use App\Http\Filters\Filterable;
+use App\Models\Helpers\FileTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class File extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Filterable, FileTrait;
 
     protected $fillable = [
         'name',
@@ -15,11 +17,17 @@ class File extends Model
         'path',
         'is_file',
         'parent',
+        'file_type'
     ];
 
     public function parent_file()
     {
-        return $this->hasOne(File::class, 'id', 'parent');
+        return $this->hasOne(File::class, 'id', 'parent')->withTrashed();
+    }
+
+    public function children()
+    {
+        return $this->hasMany(File::class, 'parent', 'id')->withTrashed();
     }
 
     public function type()

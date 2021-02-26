@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\classes\FileCoder\NOPUBLISHFileCoder;
+use App\Http\Filters\Filterable;
 use App\Models\Helpers\FileTrait;
 use App\Observers\TranslateObserver;
 use App\Scopes\TranslateScope;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 
 class Translate extends Model
 {
-    use SoftDeletes, FileTrait;
+    use SoftDeletes, FileTrait, Filterable;
 
     protected $fillable = [
         'key_id',

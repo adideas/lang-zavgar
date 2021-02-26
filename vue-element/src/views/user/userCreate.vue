@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-container">
 
     <header-sticky title="Создание пользователя">
       <template slot="prepend">
