@@ -20,6 +20,10 @@ abstract class FileCoderAbstract
         $this->items = $this->file_recoding($path);
     }
 
+    public function clear() {
+        $this->items = [];
+    }
+
     protected function setter(array $indexed, $value, &$items) {
         $index = $indexed[0];
         $indexed  = array_slice($indexed, 1);

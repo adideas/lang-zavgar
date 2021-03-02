@@ -35,22 +35,6 @@ class Translate extends Model
     protected static function boot()
     {
         parent::boot();
-        //
-        static::updating(
-            function (Translate $translate) {
-                $translate->user_id = auth()->check() ? auth()->user()->id : rand(0, 20);
-            }
-        );
-        //
-        static::creating(
-            function (Translate $translate) {
-                $translate->user_id = auth()->check() ? auth()->user()->id : rand(0, 20);
-            }
-        );
-        //
-        self::observe(TranslateObserver::class);
-        //
-        static::addGlobalScope(new TranslateScope(static::$fillableScope));
     }
 
     public function getFillable(): array
@@ -69,22 +53,5 @@ class Translate extends Model
     public function key()
     {
         return $this->hasOne(Key::class, 'id', 'key_id');
-    }
-
-    public function storage($language_id)
-    {
-        $language = Language::find($language_id);
-        if (!$language) {
-            return new NOPUBLISHFileCoder('');
-        }
-
-        $path = $this->checkFile($this->file, $language);
-        if ($path) {
-            $class = $this->file->type->class_coder;
-
-            return new $class($path);
-        } else {
-            return new NOPUBLISHFileCoder('');
-        }
     }
 }

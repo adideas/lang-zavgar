@@ -12,6 +12,21 @@ class Key extends Model
     protected static function boot()
     {
         parent::boot();
+        static::deleting(function (Key $key) {
+            // стираем подчиненные переводы
+            $translates = $key->translates;
+            if (count($translates)) {
+                foreach ($translates as $_key => $translate) {
+                    $translate->delete();
+                }
+            }
+            $keys = $key->keys;
+            if (count($keys)) {
+                foreach ($keys as $_key => $key) {
+                    $key->delete();
+                }
+            }
+        });
     }
 
     protected $fillable = [
@@ -22,12 +37,17 @@ class Key extends Model
         'indexed' => 'array'
     ];
 
-    public function children()
+    public function keys()
     {
         return $this->hasMany(Key::class, 'parent', 'id');
     }
 
     public function file() {
         return $this->hasOne(File::class, 'id', 'file_id');
+    }
+
+    public function translates()
+    {
+        return $this->hasMany(Translate::class, 'key_id', 'id')->withTrashed();
     }
 }

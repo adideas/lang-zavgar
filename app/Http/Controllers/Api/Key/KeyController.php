@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Key;
 
 use App\Http\Controllers\Controller;
 use App\Models\Key;
+use App\Models\KeyAndChild;
 use Illuminate\Http\Request;
 
 class KeyController extends Controller

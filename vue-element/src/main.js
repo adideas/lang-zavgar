@@ -12,7 +12,6 @@ import './icons' // icon
 import './permission' // permission control
 
 import './components/HeaderSticky' // Липкий хеадер
-
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium',
   locale: require('element-ui/lib/locale/lang/ru-RU')

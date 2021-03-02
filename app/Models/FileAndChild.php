@@ -3,8 +3,6 @@
 namespace App\Models;
 
 use App\Http\Filters\Filterable;
-use App\Models\Helpers\FileTrait;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class FileAndChild extends File
 {
@@ -24,12 +22,17 @@ class FileAndChild extends File
     {
         parent::boot();
         static::addGlobalScope(function ($builder) {
-            $builder->with('children');
+            $builder->with('files','keys');
         });
     }
 
-    public function children()
+    public function files()
     {
         return $this->hasMany(FileAndChild::class, 'parent', 'id');
+    }
+
+    public function keys()
+    {
+        return $this->hasMany(KeyAndChild::class, 'file_id', 'id')->whereNull('parent');
     }
 }

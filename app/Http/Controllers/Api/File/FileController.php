@@ -9,7 +9,10 @@ use App\Http\Requests\Api\File\FileRequestUpdate;
 use App\Models\File;
 use App\Models\FileAndChild;
 use App\Models\Helpers\FileTrait;
+use App\Models\Key;
+use App\Models\Language;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FileController extends Controller
 {
@@ -17,28 +20,12 @@ class FileController extends Controller
 
     public function index(Request $request, FileFilter $fileFilter)
     {
-        if ($request->input('only') == 'delete') {
-            return File::onlyTrashed()->get();;
-        }
-
-        //  withoutGlobalScopes
         return FileAndChild::filter($fileFilter)->whereNull('parent')->get();
     }
 
-    public function store(FileRequestStore $request)
+    public function store(Request $request)
     {
-        $file = File::create(
-            [
-                'name' => $request->input('name'),
-                'description' => $request->input('description'),
-                'is_file' => $request->input('is_file', 0),
-                'file_type' => $request->input('is_file', 0) > 0 ? $request->input('file_type') : null,
-                'parent' => $request->input('parent')
-            ]
-        );
-
-        $this->rePathChildrenFile($file);
-        $this->syncFolder();
+        //
     }
 
     public function show(Request $request, $id)
@@ -46,63 +33,101 @@ class FileController extends Controller
         //
     }
 
-    public function update(FileRequestUpdate $request, $id)
+    public function update(Request $request, $id)
     {
-        $file = File::withTrashed()->where('id', $id)->first();
+        $return = null;
+        if ($request->input('method') == 'property') {
+            DB::transaction(
+                function () use ($id, $request, &$return) {
+                    $return = $this->property(File::withTrashed()->where('id', $id)->first(), $request);
+                }
+            );
+        }
+        if ($request->input('method') == 'propertyKey') {
+            DB::transaction(
+                function () use ($id, $request, &$return) {
+                    $return = $this->propertyKey(Key::withTrashed()->where('id', $id)->first(), $request);
+                }
+            );
+        }
 
-        if ($request->input('path_parents') && count($request->input('path_parents'))) {
-            $file->parent = $request->input('path_parents')[count($request->input('path_parents')) - 1];
-            $file->save();
-            $this->rePathChildrenFile($file);
-            $this->syncFolder();
-        } else {
-            $file->name        = $request->input('name');
-            $file->description = $request->input('description');
-            if ($request->input('is_file')) {
-                $file->is_file = $request->input('is_file', 0);
-            }
-            if ($request->input('file_type')) {
-                $file->file_type = $request->input('file_type', null);
-            }
-            $file->save();
-            $this->rePathChildrenFile($file);
-            $this->syncFolder();
+        return $return;
+    }
+
+    public function destroy(Request $request, $id)
+    {
+        if ($request->input('method') == 'deleteFile') {
+            DB::transaction(
+                function () use ($id, $request, &$return) {
+                    $this->deleteFile(File::withTrashed()->where('id', $id)->first(), $request);
+                }
+            );
+        }
+        if ($request->input('method') == 'deleteKey') {
+            DB::transaction(
+                function () use ($id, $request, &$return) {
+                    $this->deleteKey(Key::withTrashed()->where('id', $id)->first(), $request);
+                }
+            );
         }
     }
 
-    public function destroy($id)
+    public function deleteKey(Key $key, Request $request)
     {
-        function delete_func($files)
-        {
-            foreach ($files as $key => $file) {
-                $children = $file->children;
-                if ($children) {
-                    delete_func($children);
-                }
-                $file->delete();
-            }
+        $key->delete();
+        $this->exportFile($key->file);
+    }
+
+    public function deleteFile(File $file, Request $request)
+    {
+        $paths = Language::get()
+            ->transform(fn($x) => [$this->convertPath($file->path, $x)])
+            ->collapse()
+            ->unique();
+
+        foreach ($paths as $key => $path) {
+            $this->copy($path, storage_path('backup'  . DIRECTORY_SEPARATOR . $file->name . '-' . strtotime(now())));
+            $this->rm($path);
         }
 
-        function restore_func($file)
-        {
-            if ($file) {
-                if ($file->deleted_at) {
-                    $file->restore();
-                    restore_func($file->parent_file);
-                }
-            }
+        $file->delete();
+    }
+
+    public function propertyKey(Key $key, Request $request)
+    {
+        $key->name        = $request->input('next.name');
+        $key->description = $request->input('next.description');
+        $key->indexed     = [...array_slice($key->indexed, 0, count($key->indexed) - 1), $key->name];
+        $key->save();
+        $this->reIndexedChildrenKey($key);
+        $this->exportFile($key->file);
+
+        return $key;
+    }
+
+    public function property(File $file, Request $request)
+    {
+        $old_paths = Language::get()
+            ->transform(fn($x) => [$this->convertPath($file->path, $x)])
+            ->collapse()
+            ->unique();
+
+        $file->name        = $request->input('next.name');
+        $file->description = $request->input('next.description');
+        $file->save();
+        $this->rePathChildrenFile($file);
+
+        $new_paths = Language::get()
+            ->transform(fn($x) => [$this->convertPath($file->path, $x)])
+            ->collapse()
+            ->unique();
+
+        foreach ($old_paths as $key => $old_path) {
+            $this->copy($old_path, storage_path('backup' . DIRECTORY_SEPARATOR . $file->name . '-' . strtotime(now())));
+            $this->copy($old_path, $new_paths[$key]);
+            $this->rm($old_path);
         }
 
-        $file = File::withTrashed()->where('id', $id)->first();
-
-        if ($file->deleted_at) {
-            restore_func($file->parent_file);
-            $file->restore();
-        } else {
-            delete_func($file->children);
-            $file->delete();
-        }
-
-        $this->syncFolder();
+        return $file;
     }
 }

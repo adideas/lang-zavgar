@@ -6,6 +6,7 @@ import dashboard from '@/router/menu/dashboard'
 import user from '@/router/menu/user'
 import translate from '@/router/menu/translate'
 import files from '@/router/menu/files'
+import keys from '@/router/menu/keys'
 
 Vue.use(Router)
 
@@ -17,7 +18,8 @@ export const constantRoutes = [...constant_routes, {
     ...dashboard,
     user,
     translate,
-    files
+    files,
+    keys
   ]
 }]
 
