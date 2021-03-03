@@ -1,10 +1,10 @@
 <template>
   <div>
     <el-form>
-      <el-form-item>
+      <el-form-item label="Название">
         <el-input v-model="el.name" />
       </el-form-item>
-      <el-form-item>
+      <el-form-item label="Описание">
         <el-input v-model="el.description" />
       </el-form-item>
       <el-form-item>
@@ -25,6 +25,10 @@ export default {
       type: Number,
       default: () => 0
     },
+    typeAdd: {
+      type: Number,
+      default: () => 0
+    },
     callback: {
       type: Function,
       default: () => {}
@@ -38,6 +42,19 @@ export default {
         description: ''
       }
     }
+  },
+  watch: {
+    hook() {
+      this.el.name = ''
+      this.el.description = ''
+      this.el.is_end = false
+    },
+    typeAdd() {
+      this.is_end = this.typeAdd === 3
+    }
+  },
+  created() {
+    this.is_end = this.typeAdd === 3
   },
   methods: {
     saveKey() {

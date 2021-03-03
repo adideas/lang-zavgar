@@ -44,7 +44,8 @@ export default {
       el: {
         name: '',
         description: '',
-        is_file: 0
+        is_file: 0,
+        file_type: 1
       }
     }
   },
@@ -56,9 +57,6 @@ export default {
     typeFile(e) {
       if (this.typeFile === 1) {
         this.el.is_file = 0
-        if (this.el.file_type) {
-          delete this.el.file_type
-        }
       } else {
         this.el.is_file = 1
         this.el.file_type = 1
@@ -68,12 +66,8 @@ export default {
   created() {
     if (this.typeFile === 1) {
       this.el.is_file = 0
-      if (this.el.file_type) {
-        delete this.el.file_type
-      }
     } else {
       this.el.is_file = 1
-      this.el.file_type = 1
     }
   },
   methods: {

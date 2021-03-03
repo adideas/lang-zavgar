@@ -1,0 +1,7 @@
+<?php
+
+return [
+  'last_key' => [
+    'last_key' => 'test',
+  ],
+];

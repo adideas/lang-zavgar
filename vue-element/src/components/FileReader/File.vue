@@ -3,7 +3,7 @@
     <div v-if="typeViewList === 'В клетку'" class="file">
       <svg-icon v-if="file.path && file.is_file === 0" icon-class="folder" style="width: 60px; height: 50px;" />
       <svg-icon v-if="file.path && file.is_file === 1" :icon-class="file.file_type | iconClassFile" style="width: 60px; height: 50px;" />
-      <svg-icon v-if="file.indexed" icon-class="language" style="width: 60px; height: 50px;" />
+      <svg-icon v-if="file.indexed" :icon-class="file.translate !== null ? 'language' : 'keys'" style="width: 60px; height: 50px;" />
       <div v-if="file.indexed" class="name unselectable">
         <input :value="file.name" onClick="this.select();" style="width: 100%;text-align: center; border: none; box-shadow: none;">
       </div>
@@ -12,21 +12,40 @@
     <div v-if="typeViewList === 'Списком'" class="file-list">
       <svg-icon v-if="file.path && file.is_file === 0" icon-class="folder" style="width: 30px; height: 30px;" />
       <svg-icon v-if="file.path && file.is_file === 1" :icon-class="file.file_type | iconClassFile" style="width: 30px; height: 30px;" />
-      <svg-icon v-if="file.indexed" :icon-class="file.translate === null ? 'language' : 'keys'" style="width: 30px; height: 30px;" />
+      <svg-icon v-if="file.indexed" :icon-class="file.translate !== null ? 'language' : 'keys'" style="width: 30px; height: 30px;" />
       <div v-if="file.indexed" class="name unselectable">
         <input :value="file.name" onClick="this.select();" style="width: 100%; border: none; box-shadow: none;">
       </div>
       <div v-else class="name unselectable">{{ file.name }}</div>
     </div>
-    <el-dialog :visible.sync="dialog.visible">
-      {{ dialog.data }}
+    <el-dialog :visible.sync="dialog.visible" :close-on-click-modal="false">
+      <el-table :data="language">
+        <el-table-column width="50">
+          <template slot-scope="row">
+            {{ row.row.name }}
+          </template>
+        </el-table-column>
+        <el-table-column label="Переводы">
+          <template slot-scope="row">
+            <el-input v-model="dialog.data['0'+row.row.id]" @change="setTranslate(row.row, dialog.data, $event)" />
+          </template>
+        </el-table-column>
+      </el-table>
+      <div>
+        <h4 style="text-align: center;">при изменении значения ключа система спросит о замене его на сервере</h4>
+      </div>
     </el-dialog>
   </div>
 </template>
 
 <script>
+import { update } from '@/api/api-laravel'
+
 export default {
   name: 'File',
+  inject: [
+    'languages'
+  ],
   filters: {
     iconClassFile(value) {
       const data = [
@@ -52,8 +71,14 @@ export default {
     return {
       dialog: {
         visible: false,
-        data: null
+        data: null,
+        back_data: null
       }
+    }
+  },
+  computed: {
+    language() {
+      return this.languages()
     }
   },
   methods: {
@@ -79,6 +104,7 @@ export default {
           if (this.file.translate) {
             this.dialog.visible = true
             this.dialog.data = this.file.translate
+            this.dialog.back_data = JSON.parse(JSON.stringify(this.file.translate))
           } else {
             this.$emit('view-files', [])
             this.currentFile(this.file)
@@ -91,6 +117,24 @@ export default {
           }
         }
       }
+    },
+    setTranslate(language, translate, $event) {
+      this.$alert('Обновить значение ключа?', 'Внимание', {
+        showCancelButton: true,
+        confirmButtonText: 'Обновить ключ',
+        cancelButtonText: 'Отменить'
+      }).then(res => {
+        update('translate', translate.id, {
+          id: translate.id,
+          language_id: language.id,
+          value: $event.replace(/[~,`,@,\",\',$,%,^,\r,\\,\/,\t,&,\},\{,\[,\]]*/g, '').replace(/[\n]/g, ' ')
+        }).then(_ => {
+          this.dialog.data['0' + language.id] = $event.replace(/[~,`,@,\",\',$,%,^,\r,\\,\/,\t,&,\},\{,\[,\]]*/g, '').replace(/[\n]/g, ' ')
+          this.$message.success('Сохранено')
+        })
+      }).catch(_ => {
+        this.dialog.data['0' + language.id] = this.dialog.back_data['0' + language.id]
+      })
     }
   }
 }

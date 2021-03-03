@@ -1,11 +1,27 @@
 <template>
-  <div style="background-color: #d4d4d4;display: flow-root; height: calc(100vh - 84px);" class="unselectable file-reader" @contextmenu.prevent="contextmenu('plane', $event)">
-    <div style="width: 100%;">
-      <el-radio-group v-model="type_view" size="mini" style="margin: 5px;">
-        <el-radio-button label="В клетку" />
-        <el-radio-button label="Списком" />
-      </el-radio-group>
-      <input v-if="historyView()" :value="historyView()" onClick="this.select();">
+  <div v-loading="count_loading > 0" style="background-color: #d4d4d4;display: flow-root; height: calc(100vh - 84px);" class="unselectable file-reader" @contextmenu.prevent="contextmenu('plane', $event)">
+    <div style="min-width: 100%; padding: 5px;">
+      <div class="el-col-24">
+        <table style="width: 100%;">
+          <tr>
+            <td style="width: 116px;">
+              <div>
+                <el-button size="mini" icon="el-icon-back" style="border-radius: 100px; height: 42px;" round :disabled="back_current.length < 1" @click="back()" />
+                <el-button size="mini" icon="el-icon-refresh-right" style="border-radius: 100px; height: 42px;" round @click="hardReplayAllFiles" />
+              </div>
+            </td>
+            <td>
+              <el-input :value="history.join(' / ').replace('/ /', '/')" placeholder="Файловый менеджер" />
+            </td>
+            <td style="width: 206px;">
+              <el-radio-group v-model="type_view" style="float: right;">
+                <el-radio-button label="В клетку" />
+                <el-radio-button label="Списком" />
+              </el-radio-group>
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
 
     <div v-if="back_current.length && type_view === 'В клетку'" class="file" @dblclick="back()">
@@ -30,7 +46,7 @@
 
     <ul v-show="context_menu.visible" :style="{left:context_menu.left+'px',top:context_menu.top+'px', minWidth: '200px'}" class="contextmenu">
       <li
-        v-for="(el, index) in context_menu.$el"
+        v-for="(el, index) in context_menu.$el.filter(x => x)"
         :key="index"
         :class="el.name === 'separator' ? 'separator' : ''"
         data-no-event="true"
@@ -44,20 +60,28 @@
 </template>
 
 <script>
-import { destroy, list, update } from '@/api/api-laravel'
+import { destroy, list, update, store } from '@/api/api-laravel'
 import File from '@/components/FileReader/File'
 import CreateFileOrFolder from '@/components/FileReader/CreateFileOrFolder'
-import { recursive_add_file, recursive_remove_file } from '@/components/FileReader/CreateFileOrFolder'
+// import { recursive_add_file, recursive_remove_file } from '@/components/FileReader/CreateFileOrFolder'
+import { recursive_add_file } from '@/components/FileReader/CreateFileOrFolder'
 import PropertiesFolderAndFile from '@/components/FileReader/PropertiesFolderAndFile'
-import { recursive_update_entity, current_update_entity } from '@/components/FileReader/PropertiesFolderAndFile'
+// import { recursive_update_entity, current_update_entity } from '@/components/FileReader/PropertiesFolderAndFile'
 import CreateKeys from '@/components/FileReader/CreateKeys'
 import { recursive_add_key } from '@/components/FileReader/CreateKeys'
 
 export default {
   name: 'FileReader',
   components: { File },
+  provide() {
+    return {
+      languages: () => this.languages
+    }
+  },
   data() {
     return {
+      languages: [],
+      count_loading: 0,
       type_view: 'В клетку',
       files: [],
       current: [],
@@ -81,6 +105,7 @@ export default {
   },
   created() {
     this.getFiles()
+    this.getLanguage()
   },
   mounted() {
     document.querySelector('div.file-reader').addEventListener('click', this.globalEventClick)
@@ -91,9 +116,49 @@ export default {
     } catch (ignore) { /**/ }
   },
   methods: {
+    getLanguage() {
+      list('language').then(res => {
+        this.languages = res.data || []
+      })
+    },
+    hardReplayAllFiles() {
+      const old_history = JSON.parse(JSON.stringify(this.history))
+      this.count_loading++
+      list('file').then(res => {
+        this.back_current = []
+        this.history = []
+        this.files = res.data || []
+        this.current = res.data || []
+        const recursive_update = (files, history) => {
+          files.forEach(file => {
+            if (file.name === history[0]) {
+              // переходы
+              if (file.files && file.files.length) {
+                this.setCurrent(file.files)
+                this.currentFile(file)
+                this.setHistory(file.name, 1)
+                if (history.slice(1).length > 0) {
+                  recursive_update(file.files, history.slice(1))
+                }
+              } else {
+                if (file.keys && file.keys.length) {
+                  this.setCurrent(file.keys)
+                  this.currentFile(file)
+                  this.setHistory(file.name, 2)
+                  if (history.slice(1).length > 0) {
+                    recursive_update(file.keys, history.slice(1))
+                  }
+                }
+              }
+            }
+          })
+        }
+        recursive_update(this.files, old_history)
+      }).finally(_ => {
+        this.count_loading--
+      })
+    },
     async copyFile() {
-      // TODO работа сервера
-
       const recursive_fun = (files = [], copy_buffer) => {
         return new Promise(resolve => {
           files.forEach(file => {
@@ -117,33 +182,43 @@ export default {
 
       const file_paste = await recursive_fun(this.files, this.current_file)
 
-      if (file_paste.files && file_paste.files.findIndex(x => x.name === this.copy_buffer.name) >= 0) {
-        this.$alert('В этой папке уже есть файл с таким именем', '', { confirmButtonText: 'Хорошо' })
+      const data = {
+        method: 'copyMove',
+        // Это ключ или файл
+        entity_type: this.copy_buffer.indexed ? 'Key' : 'File',
+        // Ид родителя
+        parent: this.current_file.id,
+        // вставить в ключ или файл
+        parent_type: this.current_file.indexed ? 'Key' : 'File',
+        // вырезать или копировать
+        move: !!this.copy_buffer.is_cut
+      }
+
+      if ((file_paste.files && file_paste.files.findIndex(x => x.name === this.copy_buffer.name) >= 0) ||
+          (file_paste.keys && file_paste.keys.findIndex(x => x.name === this.copy_buffer.name) >= 0)) {
+        data.entity_new_name = this.copy_buffer.name + '_' + (Math.random() * 100000).toFixed(0)
+      }
+
+      this.count_loading++
+      update('file', this.copy_buffer.id, data).then(async res => {
+        this.hardReplayAllFiles()
+        /* const file_copy = await recursive_fun(this.files, this.copy_buffer)
+
+        if (this.copy_buffer.indexed && (this.current_file.is_file || this.copy_buffer.indexed)) {
+          this.current.push(JSON.parse(JSON.stringify(file_copy)))
+          file_paste.keys.push(JSON.parse(JSON.stringify(file_copy)))
+        } else {
+          this.current.push(JSON.parse(JSON.stringify(file_copy)))
+          file_paste.files.push(JSON.parse(JSON.stringify(file_copy)))
+        }
+
+        if (this.copy_buffer.is_cut) {
+          file_copy.disable = true
+        }*/
         this.copy_buffer = null
-        return 0
-      }
-
-      if (file_paste.keys && file_paste.keys.findIndex(x => x.name === this.copy_buffer.name) >= 0) {
-        this.$alert('В этой папке уже есть ключ с таким именем', '', { confirmButtonText: 'Хорошо' })
-        this.copy_buffer = null
-        return 0
-      }
-
-      const file_copy = await recursive_fun(this.files, this.copy_buffer)
-
-      if (this.copy_buffer.indexed && (this.current_file.is_file || this.copy_buffer.indexed)) {
-        this.current.push(JSON.parse(JSON.stringify(file_copy)))
-        file_paste.keys.push(JSON.parse(JSON.stringify(file_copy)))
-      } else {
-        this.current.push(JSON.parse(JSON.stringify(file_copy)))
-        file_paste.files.push(JSON.parse(JSON.stringify(file_copy)))
-      }
-
-      if (this.copy_buffer.is_cut) {
-        file_copy.disable = true
-      }
-
-      this.copy_buffer = null
+      }).finally(_ => {
+        this.count_loading--
+      })
     },
     deleteFile(data) {
       this.$alert('Удалить файл?', 'Внимание', {
@@ -156,11 +231,15 @@ export default {
           cancelButtonText: 'Отменить',
           showCancelButton: true
         }).then(res => {
+          this.count_loading++
           destroy('file', data.id, {
             method: data.indexed ? 'deleteKey' : 'deleteFile'
           }).then(res => {
-            this.current = this.current.filter(x => x.id !== data.id)
-            recursive_remove_file(this.files, data.id, !data.indexed)
+            this.hardReplayAllFiles()
+            /*            this.current = this.current.filter(x => x.id !== data.id)
+            recursive_remove_file(this.files, data.id, !data.indexed)*/
+          }).finally(_ => {
+            this.count_loading--
           })
         })
       })
@@ -176,14 +255,23 @@ export default {
                 typeFile: type,
                 hook: Math.random(),
                 callback: async(e) => {
-                  // TODO работа сервера
                   const file_paste = await recursive_add_file(this.files, this.current_file)
                   if (file_paste.files.findIndex(x => x.name === e.name) >= 0) {
                     this.$alert('В этой папке уже есть файл с таким именем', '', { confirmButtonText: 'Хорошо' })
                     return false
                   }
-                  file_paste.files.push({ ...e, files: [], keys: [], path: '__', updated_at: (new Date()).toISOString() })
-                  this.current.push({ ...e, files: [], keys: [], path: '__', updated_at: (new Date()).toISOString() })
+                  this.count_loading++
+                  store('file', {
+                    method: 'makeFileDirectory',
+                    data: e,
+                    parent: this.current_file.id
+                  }).then(res => {
+                    this.hardReplayAllFiles()
+                    // file_paste.files.push(res.data)
+                    // this.current.push(res.data)
+                  }).finally(_ => {
+                    this.count_loading--
+                  })
                 }
               }
             })
@@ -195,15 +283,29 @@ export default {
             message: this.$createElement(CreateKeys, {
               props: {
                 hook: Math.random(),
+                typeAdd: type,
                 callback: async(e) => {
-                  // TODO работа сервера
                   const file_paste = await recursive_add_key(this.files, this.current_file)
                   if (file_paste.keys.findIndex(x => x.name === e.name) >= 0) {
                     this.$alert('В этой папке уже есть ключ с таким именем', '', { confirmButtonText: 'Хорошо' })
                     return false
                   }
-                  file_paste.keys.push({ ...e, indexed: [], file_id: 1, keys: [], updated_at: (new Date()).toISOString() })
-                  this.current.push({ ...e, indexed: [], file_id: 1, keys: [], updated_at: (new Date()).toISOString() })
+
+                  const parent = this.current_file.path ? null : this.current_file.id
+                  const file_id = this.current_file.path ? this.current_file.id : this.current_file.file_id
+                  this.count_loading++
+                  store('file', {
+                    method: 'makeKey',
+                    data: e,
+                    parent,
+                    file_id
+                  }).then(res => {
+                    this.hardReplayAllFiles()
+                    // file_paste.keys.push(res.data)
+                    // this.current.push(res.data)
+                  }).finally(_ => {
+                    this.count_loading--
+                  })
                 }
               }
             })
@@ -218,10 +320,10 @@ export default {
           { name: `${type_entity}: ${this.history[this.history.length - 1]}` }
         ]
         // Копирование всего чего угодно
-        if (this.copy_buffer && (this.copy_buffer.is_file === 0 || this.copy_buffer.is_file === 1)) {
+        if (this.copy_buffer && (this.copy_buffer.is_file === 0 || this.copy_buffer.is_file === 1) && this.current_file.is_file === 0) {
           this.context_menu.$el.push({ name: `Вставить ${this.copy_buffer.name} сюда`, click: this.copyFile })
         }
-        if (this.copy_buffer && this.copy_buffer.indexed && (this.current_file.is_file || this.copy_buffer.indexed)) {
+        if (this.copy_buffer && this.copy_buffer.indexed && (this.current_file.is_file === 1 || this.current_file.indexed)) {
           this.context_menu.$el.push({ name: `Вставить ключ ${this.copy_buffer.name} сюда`, click: this.copyFile })
         }
 
@@ -246,6 +348,9 @@ export default {
         } else {
           this.context_menu.$el.push({
             name: 'Создать ключ', click: this.makeFolderKeyFile(3)
+          })
+          this.context_menu.$el.push({
+            name: 'Создать под ключ', click: this.makeFolderKeyFile(4)
           })
         }
       } else {
@@ -276,6 +381,25 @@ export default {
         ]
       }
 
+      if (type_file === 'Ключ' && data.translate) {
+        this.context_menu.$el.splice(1, 0, {
+          name: 'Сделать под ключём', click: () => {
+            this.$alert('Это удалит все вложенные ключи если они есть! Для создания подключей', 'Внимание', {
+              confirmButtonText: 'Продолжить',
+              showCancelButton: true,
+              cancelButtonText: 'Отменить'
+            }).then(res => {
+              this.current_file = data
+              this.makeFolderKeyFile(3)()
+            })
+          }
+        })
+      }
+
+      if (type_file === 'Ключ') {
+        this.context_menu.$el = this.context_menu.$el.filter(x => x.name !== 'Копировать')
+      }
+
       if (data.name !== '/') {
         this.context_menu.$el.push({
           name: 'Свойства', click: () => {
@@ -285,12 +409,16 @@ export default {
                 props: {
                   entity: data,
                   callbackUpdate: (e) => {
+                    this.count_loading++
                     update('file', data.id, {
                       method: data.path ? 'property' : 'propertyKey',
                       next: e
                     }).then(res => {
-                      current_update_entity(this.current, data, e)
-                      recursive_update_entity(this.files[0], data, e)
+                      this.hardReplayAllFiles()
+                      // current_update_entity(this.current, data, e)
+                      // recursive_update_entity(this.files[0], data, e)
+                    }).finally(_ => {
+                      this.count_loading--
                     })
                   }
                 }
@@ -322,9 +450,12 @@ export default {
       }
     },
     getFiles() {
+      this.count_loading++
       list('file').then(res => {
         this.files = res.data || []
         this.current = res.data || []
+      }).finally(_ => {
+        this.count_loading--
       })
     },
     setCurrentFile(entity) {
@@ -334,7 +465,7 @@ export default {
       this.back_current.push(this.current)
       this.current = entity
     },
-    setHistory(history) {
+    setHistory(history, other = null) {
       this.history.push(history)
     },
     currentFile(data) {
@@ -354,15 +485,6 @@ export default {
       } else {
         this.currentFile(this.files[0])
       }
-    },
-    historyView() {
-      if (this.history.length) {
-        const index = this.history.indexOf('${language}')
-        if (index >= 0) {
-          return this.history.slice(index).join('.').replace('${language}.', '').replace('${language}', '')
-        }
-      }
-      return ''
     },
     globalEventClick(ev) {
       if (ev.target.getAttribute('data-no-event') !== 'true') {

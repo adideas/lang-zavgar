@@ -26,7 +26,7 @@ class Dump extends Command
 
     public function handle()
     {
-        $this->rePathChildrenFile(File::find(3));
+        $this->rePathChildrenFile(File::find(1));
     }
 }
 

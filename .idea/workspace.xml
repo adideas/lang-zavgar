@@ -5,31 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81654e0a-77d3-4949-89ca-6e5e2e4e2a10" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/lang.zavgar.online.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lang.zavgar.online.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_02_152351_create_table_cache.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_03_110025_foregin_key_file.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/backup/123-1614763178" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/backup/test_47604-1614770514" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/backup/test_49032-1614771246" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614770654" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614771356" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614771517" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614771631" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614771660" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614784367" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614786162" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/lang/new_folder/test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/lang/new_folder/test2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/lang/new_folder/test3.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/langnew_folder123.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Dump.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Dump.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Key/KeyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Key/KeyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/File/FileRequestStore.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Api/File/FileRequestUpdate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Jobs/TranslateJob.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/File.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/FileAndChild.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/FileAndChild.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Helpers/FileTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Helpers/FileTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Key.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Key.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Translate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Translate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/TranslateObserver.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Scopes/TranslateScope.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/classes/FileCoder/FileCoderAbstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/FileCoder/FileCoderAbstract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/classes/FileCoder/PhpFileCoder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/FileCoder/PhpFileCoder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/back1/en/auth4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/back1/en/test.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/back1/ru/auth4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/back1/ru/test.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/views/files/components/SettingsFile.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/views/files/components/TreeView.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/views/files/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/files/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/lang/test2/en/test1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/lang/test2/en/test1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/lang/test2/ru/auth431.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/lang/test2/ru/auth431.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/lang/test2/ru/test1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/lang/test2/ru/test1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/CreateFileOrFolder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/CreateFileOrFolder.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/CreateKeys.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/CreateKeys.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/File.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/File.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/icons/svg/keys.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/icons/svg/keys.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +207,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Users\User\AppData\Local\JetBrains\Toolbox\apps\PhpStorm\ch-0\202.7660.42\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -252,7 +258,8 @@
       <workItem from="1613324905051" duration="48670000" />
       <workItem from="1613543809212" duration="465000" />
       <workItem from="1614168680991" duration="77037000" />
-      <workItem from="1614364600764" duration="48895000" />
+      <workItem from="1614364600764" duration="70594000" />
+      <workItem from="1614773123458" duration="11365000" />
     </task>
     <servers />
   </component>
@@ -269,33 +276,33 @@
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614351453046" />
     <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613318162909" />
-    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614677452287">
+    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614765948328">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614677452287" />
+    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614765948328" />
     <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613146224407" />
-    <state width="1876" height="232" key="GridCell.Tab.0.bottom" timestamp="1614677044649">
+    <state width="1877" height="232" key="GridCell.Tab.0.bottom" timestamp="1614792766399">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614677044649" />
+    <state width="1877" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614792766399" />
     <state width="1876" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613319543383" />
     <state width="915" height="235" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="1876" height="232" key="GridCell.Tab.0.center" timestamp="1614677044649">
+    <state width="1877" height="232" key="GridCell.Tab.0.center" timestamp="1614792766399">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="232" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614677044649" />
+    <state width="1877" height="232" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614792766399" />
     <state width="1876" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613319543383" />
     <state width="915" height="235" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="1876" height="232" key="GridCell.Tab.0.left" timestamp="1614677044649">
+    <state width="1877" height="232" key="GridCell.Tab.0.left" timestamp="1614792766398">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="232" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614677044649" />
+    <state width="1877" height="232" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614792766398" />
     <state width="1876" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613319543383" />
     <state width="915" height="235" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="1876" height="232" key="GridCell.Tab.0.right" timestamp="1614677044649">
+    <state width="1877" height="232" key="GridCell.Tab.0.right" timestamp="1614792766399">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="232" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614677044649" />
+    <state width="1877" height="232" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614792766399" />
     <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613319543383" />
     <state width="915" height="235" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
     <state x="704" y="227" key="NewPhpClassDialog" timestamp="1614250486992">
@@ -307,10 +314,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613371091349" />
-    <state x="763" y="139" key="RollbackChangesDialog" timestamp="1614678962240">
+    <state x="763" y="139" key="RollbackChangesDialog" timestamp="1614763048103">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="763" y="139" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614678962240" />
+    <state x="763" y="139" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614763048103" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1614778692222">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614778692222" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1613321157014">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -319,19 +330,19 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="601" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614679816465" />
-    <state x="458" y="133" width="952" height="566" key="find.popup" timestamp="1614689822142">
+    <state x="458" y="133" width="952" height="566" key="find.popup" timestamp="1614792798605">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="458" y="133" width="952" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614689822142" />
+    <state x="458" y="133" width="952" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614792798605" />
     <state x="513" y="188" width="952" height="566" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614174634188" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1614673853675">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614673853675" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614677022134">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614792163327">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614677022134" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614792163327" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613311496911" />
   </component>
   <component name="XDebuggerManager">
@@ -344,15 +355,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue</url>
-          <line>88</line>
-          <properties lambdaOrdinal="-1" />
+          <line>113</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue</url>
-          <line>180</line>
-          <properties lambdaOrdinal="-1" />
+          <line>258</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php</url>
+          <line>135</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php</url>
+          <line>258</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
