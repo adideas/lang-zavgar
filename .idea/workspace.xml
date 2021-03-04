@@ -5,36 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81654e0a-77d3-4949-89ca-6e5e2e4e2a10" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_02_152351_create_table_cache.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_03_03_110025_foregin_key_file.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/backup/123-1614763178" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/backup/test_47604-1614770514" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/backup/test_49032-1614771246" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614770654" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614771356" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614771517" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614771631" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614771660" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614784367" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/backup/test_55179-1614786162" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/lang/new_folder/test.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/lang/new_folder/test2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/lang/new_folder/test3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/langnew_folder123.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Dump.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Dump.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Helpers/FileTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Helpers/FileTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Key.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Key.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/test2/en/test1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/lang/test2/en/test1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/test2/ru/auth431.json" beforeDir="false" afterPath="$PROJECT_DIR$/storage/lang/test2/ru/auth431.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/test2/ru/test1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/lang/test2/ru/test1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/CreateFileOrFolder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/CreateFileOrFolder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/CreateKeys.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/CreateKeys.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/File.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/File.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/icons/svg/keys.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/icons/svg/keys.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Key/KeyController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Language/LanguageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Language/LanguageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/router/menu/keys.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/views/keys/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/views/user/userCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/user/userCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/views/user/userEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/user/userEdit.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -259,7 +241,7 @@
       <workItem from="1613543809212" duration="465000" />
       <workItem from="1614168680991" duration="77037000" />
       <workItem from="1614364600764" duration="70594000" />
-      <workItem from="1614773123458" duration="11365000" />
+      <workItem from="1614773123458" duration="18316000" />
     </task>
     <servers />
   </component>
@@ -271,10 +253,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="743" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613148409261" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614351453046">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614793315003">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614351453046" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614793315003" />
     <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613318162909" />
     <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614765948328">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -339,10 +321,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614673853675" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614792163327">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614799670608">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614792163327" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614799670608" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613311496911" />
   </component>
   <component name="XDebuggerManager">

@@ -96,7 +96,6 @@ export default {
     return {
       translations: [],
       languages: [],
-      keys: [],
       value: '',
       loading: true
     }
@@ -114,9 +113,6 @@ export default {
       })
       list('language').then(res => {
         this.languages = res.data || []
-      })
-      list('key').then(res => {
-        this.keys = res.data || []
       })
     },
     keyPress(ev, refs, index, lang, entity_id, index2) {

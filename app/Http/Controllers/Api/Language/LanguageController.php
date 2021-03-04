@@ -17,20 +17,17 @@ class LanguageController extends Controller
     public function store(Request $request)
     {
         //
+        return Language::create($request->only(['name', 'description']));
     }
 
-    public function show($id)
+    public function update(Request $request, Language $language)
     {
         //
+        return $language->update($request->only(['name', 'description']));
     }
 
-    public function update(Request $request, $id)
+    public function destroy(Language $language)
     {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
+        $language->delete();
     }
 }

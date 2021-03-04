@@ -20,13 +20,13 @@ Route::middleware(['auth:api'])->namespace('Api')->group(
     function () {
         //
         Route::apiResource('user', 'User\UserController');
+        Route::get('user-access', 'User\UserController@listAccess');
         Route::post('logout', 'User\UserController@logout');
         Route::get('current-user', 'User\CurrentUserController');
 
         Route::apiResource('file', 'File\FileController');
         Route::apiResource('translate', 'Translate\TranslateController');
         Route::apiResource('language', 'Language\LanguageController');
-        Route::apiResource('key', 'Key\KeyController');
         //
     }
 );
