@@ -54,7 +54,6 @@ class Language extends Model
                         'data'   => ['update','0'.$language->id],
                     ]
                 );
-
             }
         );
     }
