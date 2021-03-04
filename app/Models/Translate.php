@@ -2,18 +2,21 @@
 
 namespace App\Models;
 
-use App\classes\FileCoder\NOPUBLISHFileCoder;
 use App\Http\Filters\Filterable;
 use App\Models\Helpers\FileTrait;
-use App\Observers\TranslateObserver;
-use App\Scopes\TranslateScope;
+use App\Traits\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\DB;
 
 class Translate extends Model
 {
-    use SoftDeletes, FileTrait, Filterable;
+    use SoftDeletes, FileTrait, Filterable, Searchable;
+
+    public $searchable = [
+        'key_id' => 'key.name,description',
+        'file_id' => 'file.name,description,path'
+    ];
 
     protected $fillable = [
         'key_id',

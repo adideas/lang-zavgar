@@ -2,13 +2,18 @@
 
 namespace App\Models;
 
+use App\Traits\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Cache;
 
 class Key extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Searchable;
+
+    public $searchable = [
+        'file_id' => 'file.name,description,path'
+    ];
 
     protected static function boot()
     {

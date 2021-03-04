@@ -27,16 +27,32 @@ class Dump extends Command
 
     public function handle()
     {
-        dd(
-            User::where('id', 1)->first()->update(
-                [
-                    'password' => Hash::make('123456'),
-                ]
-            )
-        );
+        $model = Translate::first();
+        $searchable = $model->searchable;
 
-        dd(json_decode(json_encode(Access::latest()->get())));
-        $this->rePathChildrenFile(File::find(1));
+        $string = ' ';
+
+        foreach ($model->getAttributes() as $key => $value) {
+            if(gettype($value) == 'string' && strtotime($value) < 1500000000) {
+                $string .= $value . ' ';
+            }
+        }
+
+        if (isset($model->searchable)) {
+            foreach ($model->searchable as $relation => $params) {
+                $params = explode('.', $params);
+                if(count($params) == 2) {
+                    $data = $model->{$params[0]}()->select(['id',...explode(',',$params[1])])->get()->toArray()[0];
+                    foreach ($data as $key => $value) {
+                        if(gettype($value) == 'string' && strtotime($value) < 1500000000) {
+                            $string .= $value . ' ';
+                        }
+                    }
+                }
+            }
+        }
+
+        dd($string);
     }
 }
 

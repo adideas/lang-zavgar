@@ -4,12 +4,13 @@ namespace App\Models;
 
 use App\Http\Filters\Filterable;
 use App\Models\Helpers\FileTrait;
+use App\Traits\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class File extends Model
 {
-    use SoftDeletes, Filterable, FileTrait;
+    use SoftDeletes, Filterable, FileTrait, Searchable;
 
     protected $fillable = [
         'name',

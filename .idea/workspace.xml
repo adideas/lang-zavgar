@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81654e0a-77d3-4949-89ca-6e5e2e4e2a10" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Dump.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Dump.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/File.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Key.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Key.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Language.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Language.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Translate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Translate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +178,7 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/storage/logs/laravel.log" />
     <property name="js.ns.project" value="true" />
     <property name="js.ns.project.flavor" value="JavaScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue-element/src/views/files/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue-element/src/views/translate" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -184,16 +190,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Models" />
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\app" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src\views\translate" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src\views\files\components" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Models" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Http\Filters\Filter" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Http\Filters" />
-      <recent name="C:\OSPanel\domains\lang.zavgar.online\app\classes\FileCoder" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Models" />
-      <recent name="C:\OSPanel\domains\lang.zavgar.online\app" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
@@ -231,7 +237,7 @@
       <workItem from="1613543809212" duration="465000" />
       <workItem from="1614168680991" duration="77037000" />
       <workItem from="1614364600764" duration="70594000" />
-      <workItem from="1614773123458" duration="31729000" />
+      <workItem from="1614773123458" duration="37800000" />
     </task>
     <servers />
   </component>
@@ -248,10 +254,10 @@
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614793315003" />
     <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613318162909" />
-    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614850288256">
+    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614859434558">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614850288256" />
+    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614859434558" />
     <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613146224407" />
     <state width="1877" height="232" key="GridCell.Tab.0.bottom" timestamp="1614845241868">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -277,10 +283,10 @@
     <state width="1877" height="232" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614845241868" />
     <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613319543383" />
     <state width="915" height="235" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state x="704" y="227" key="NewPhpClassDialog" timestamp="1614250486992">
+    <state x="704" y="227" key="NewPhpClassDialog" timestamp="1614856207319">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="704" y="227" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614250486992" />
+    <state x="704" y="227" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614856207319" />
     <state x="2624" y="227" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613147633471" />
     <state x="794" y="439" key="NewPhpFileDialog" timestamp="1613371091349">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -315,10 +321,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614673853675" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614851674459">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614857064567">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614851674459" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614857064567" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613311496911" />
   </component>
   <component name="XDebuggerManager">
