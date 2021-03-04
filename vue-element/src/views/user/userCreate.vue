@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container">
+  <div v-loading="loading" class="app-container">
 
     <header-sticky title="Создание пользователя">
       <template slot="prepend">
@@ -33,7 +33,7 @@
       </div>
       <div class="el-col-xs-24 el-col-sm-24 el-col-md-24 el-col-lg-11 el-col-lg-offset-1 el-col-xl-11 el-col-xl-offset-1 el-col-12" style="margin-top: 10px">
         <el-card header="Доступы">
-          <el-transfer v-model="form.access" class="my-transfer-user" filterable :data="access_list" :titles="['Все доступы', 'Предоставленные']" />
+          <el-transfer v-model="form.access_id" class="my-transfer-user" filterable :data="access_list" :titles="['Все доступы', 'Предоставленные']" :props="{key: 'id', label: 'name'}" />
         </el-card>
       </div>
     </div>
@@ -48,19 +48,22 @@ export default {
   name: 'UserCreate',
   data() {
     return {
+      loading: true,
       show_password: false,
       access_list: [],
       form: {
         email: '',
         password: '',
         name: '',
-        access: []
+        access_id: []
       }
     }
   },
   created() {
     list('user-access').then(res => {
       this.access_list = res.data || []
+    }).finally(_ => {
+      this.loading = false
     })
     this.form.password = generator.generate({
       length: 10,

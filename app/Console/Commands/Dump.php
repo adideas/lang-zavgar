@@ -2,13 +2,14 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Access;
 use App\Models\File;
 use App\Models\Helpers\FileTrait;
 use App\Models\Translate;
 use App\User;
-use App\UserAccess;
 use Closure;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class Dump extends Command
@@ -26,6 +27,15 @@ class Dump extends Command
 
     public function handle()
     {
+        dd(
+            User::where('id', 1)->first()->update(
+                [
+                    'password' => Hash::make('123456'),
+                ]
+            )
+        );
+
+        dd(json_decode(json_encode(Access::latest()->get())));
         $this->rePathChildrenFile(File::find(1));
     }
 }

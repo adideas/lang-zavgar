@@ -40,7 +40,20 @@ class Language extends Model
                     }
                 );
 
-
+                \App\Models\Access::create(
+                    [
+                        'name'   => "$language->description [$language->name] show",
+                        'entity' => \App\Models\Translate::class,
+                        'data'   => ['show','0'.$language->id],
+                    ]
+                );
+                \App\Models\Access::create(
+                    [
+                        'name'   => "$language->description [$language->name] update",
+                        'entity' => \App\Models\Translate::class,
+                        'data'   => ['update','0'.$language->id],
+                    ]
+                );
 
             }
         );
