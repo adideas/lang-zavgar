@@ -33,16 +33,17 @@
       <div class="name unselectable">...</div>
     </div>
 
-    <file
-      v-for="(file, index) in current"
-      :key="index"
-      :file="file"
-      :type-view-list="type_view"
-      @view-files="setCurrent"
-      @current-file="setCurrentFile"
-      @history="setHistory"
-      @contextmenu.prevent="contextmenu('entity', $event, file)"
-    />
+    <span v-for="(file, index) in current" :key="index">
+      <file
+        v-if="file && file.id"
+        :file="file"
+        :type-view-list="type_view"
+        @view-files="setCurrent"
+        @current-file="setCurrentFile"
+        @history="setHistory"
+        @contextmenu.prevent="contextmenu('entity', $event, file)"
+      />
+    </span>
 
     <ul v-show="context_menu.visible" :style="{left:context_menu.left+'px',top:context_menu.top+'px', minWidth: '200px'}" class="contextmenu">
       <li

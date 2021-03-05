@@ -6,40 +6,54 @@ use App\Http\Controllers\Controller;
 use App\Http\Filters\Filter\TranslateFilter;
 use App\Http\Requests\Api\Translate\TranslateRequest;
 use App\Http\Resources\Api\Translate\TranslateResource;
+use App\Models\File;
+use App\Models\FileAndChildOnlyId;
+use App\Models\Key;
+use App\Models\KeyAndChildOnlyId;
+use App\Models\Search;
 use App\Models\Translate;
 use Illuminate\Http\Request;
 
 class TranslateController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Translate::class);
+    }
+
     public function index(Request $request, TranslateFilter $translateFilter)
     {
-        $translate = Translate::filter($translateFilter)->with('key:id,name,description')->get();
+        $translate = Translate::filter($translateFilter);
 
-        return TranslateResource::collection($translate);
-    }
+        $filter = json_decode($request->input('filter'), true);
+        if($filter['model_id']) {
+            $model = Search::find($filter['model_id']);
+            if ($model) {
+                if($model->entity === Translate::class) {
+                    $translate = Translate::where('id', $model->model->id);
+                } elseif ($model->entity === File::class) {
+                    $files = FileAndChildOnlyId::find($model->model->id);
+                    $translate = Translate::whereIn('file_id', recursive_get_id($files));
+                } elseif ($model->entity === Key::class) {
+                    $keys = KeyAndChildOnlyId::find($model->model->id);
+                    $translate = Translate::whereIn('file_id', recursive_get_id($keys));
+                }
+            }
+        } else {
+            $translate = Translate::filter($translateFilter);
+        }
 
-    public function store(Request $request)
-    {
-        //
-    }
 
-    public function show($id)
-    {
-        //
+
+        return TranslateResource::collection($translate->with('key:id,name,description')->paginate($request->to ?: 10));
     }
 
     public function update(TranslateRequest $request, Translate $translate)
     {
-        //
         $translate->update(
             [
                 '0' . $request->input('language_id') => $request->input('value', null),
             ]
         );
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

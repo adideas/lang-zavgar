@@ -64,7 +64,11 @@ abstract class QueryFilter
                                     // если тип данных не совпал
                                     if ($type == 'array') {
                                         if (gettype($value) == 'string') {
-                                            $this->$field([$value]);
+                                            try {
+                                                $this->$field(json_decode($value, true));
+                                            } catch (\Exception $e){
+                                                $this->$field([$value]);
+                                            }
                                         }
                                         if (gettype($value) == 'int') {
                                             $this->$field([$value]);

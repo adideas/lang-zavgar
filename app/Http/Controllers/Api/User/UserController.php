@@ -61,6 +61,12 @@ class UserController extends Controller
             }
         }
 
+        $diff = array_diff($user->access()->pluck('access_id')->toArray(), $request->input('access_id', []));
+
+        if(count($diff)) {
+            cache()->forget('getAccess_user_'.$user->id);
+        }
+
         $user->access()->sync($request->input('access_id', []));
 
         return $user->update($data);

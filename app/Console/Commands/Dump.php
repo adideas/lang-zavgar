@@ -27,32 +27,10 @@ class Dump extends Command
 
     public function handle()
     {
-        $model = Translate::first();
-        $searchable = $model->searchable;
+        $access = User::find(1)->getAccess();
 
-        $string = ' ';
 
-        foreach ($model->getAttributes() as $key => $value) {
-            if(gettype($value) == 'string' && strtotime($value) < 1500000000) {
-                $string .= $value . ' ';
-            }
-        }
-
-        if (isset($model->searchable)) {
-            foreach ($model->searchable as $relation => $params) {
-                $params = explode('.', $params);
-                if(count($params) == 2) {
-                    $data = $model->{$params[0]}()->select(['id',...explode(',',$params[1])])->get()->toArray()[0];
-                    foreach ($data as $key => $value) {
-                        if(gettype($value) == 'string' && strtotime($value) < 1500000000) {
-                            $string .= $value . ' ';
-                        }
-                    }
-                }
-            }
-        }
-
-        dd($string);
+        dd(json_decode(json_encode($access)));
     }
 }
 

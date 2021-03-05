@@ -24,6 +24,12 @@ class Translate extends Model
         'user_id',
     ];
 
+    const FILLABLE = [
+        'key_id',
+        'file_id',
+        'user_id',
+    ];
+
     //
     static protected $fillableScope = [
         'key_id',

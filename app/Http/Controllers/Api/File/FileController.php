@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Api\File;
 
 use App\Http\Controllers\Controller;
 use App\Http\Filters\Filter\FileFilter;
-use App\Http\Requests\Api\File\FileRequestStore;
-use App\Http\Requests\Api\File\FileRequestUpdate;
 use App\Models\File;
 use App\Models\FileAndChild;
 use App\Models\Helpers\FileTrait;
@@ -13,6 +11,7 @@ use App\Models\Key;
 use App\Models\KeyAndChild;
 use App\Models\Language;
 use App\Models\Translate;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
@@ -21,13 +20,20 @@ class FileController extends Controller
 {
     use FileTrait;
 
+    /*public function __construct()
+    {
+        $this->authorizeResource(File::class);
+    }*/
+
     public function index(Request $request, FileFilter $fileFilter)
     {
+        $this->authorize('viewAny', File::class);
         return FileAndChild::filter($fileFilter)->whereNull('parent')->get();
     }
 
     public function store(Request $request)
     {
+        $this->authorize('create', File::class);
         $return = null;
         if ($request->input('method') == 'makeFileDirectory') {
             DB::transaction(
@@ -54,6 +60,7 @@ class FileController extends Controller
 
     public function update(Request $request, $id)
     {
+        $this->authorize('update', File::class);
         $return = null;
         if ($request->input('method') == 'property') {
             DB::transaction(
@@ -82,6 +89,7 @@ class FileController extends Controller
 
     public function destroy(Request $request, $id)
     {
+        $this->authorize('delete', File::class);
         if ($request->input('method') == 'deleteFile') {
             DB::transaction(
                 function () use ($id, $request, &$return) {

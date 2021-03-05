@@ -7,6 +7,7 @@ use App\Traits\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
@@ -21,6 +22,15 @@ class Language extends Model
     protected static function boot()
     {
         parent::boot();
+
+        static::addGlobalScope(function($builder) {
+            if (auth()->check()) {
+                $access = auth()->user()->getAccess();
+                if(!$access['root']) {
+                    $builder->whereIn('id', $access['translate']['show']);
+                }
+            }
+        });
 
         static::created(
             function (Language $language) {

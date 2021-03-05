@@ -7,11 +7,25 @@
     <list default="true" id="81654e0a-77d3-4949-89ca-6e5e2e4e2a10" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/Dump.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Dump.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/File.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Key.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Key.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Language/LanguageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Language/LanguageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/User/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Filters/Filter/TranslateFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Filters/Filter/TranslateFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Filters/QueryFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Filters/QueryFilter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Language.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Language.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Translate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Translate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/UserPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/UserPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/lang/new_folder/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/lang/new_folder/test2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/lang/new_folder/test3.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/lang/test2/en/test1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/lang/test2/ru/test1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +192,7 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/storage/logs/laravel.log" />
     <property name="js.ns.project" value="true" />
     <property name="js.ns.project.flavor" value="JavaScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue-element/src/views/translate" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Models" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -191,15 +205,17 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src" />
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src\query" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Models" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\app" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Models" />
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src\views\translate" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src\views\files\components" />
-      <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Models" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Http\Filters\Filter" />
-      <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Http\Filters" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
@@ -237,7 +253,7 @@
       <workItem from="1613543809212" duration="465000" />
       <workItem from="1614168680991" duration="77037000" />
       <workItem from="1614364600764" duration="70594000" />
-      <workItem from="1614773123458" duration="37800000" />
+      <workItem from="1614773123458" duration="84754000" />
     </task>
     <servers />
   </component>
@@ -254,33 +270,33 @@
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614793315003" />
     <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613318162909" />
-    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614859434558">
+    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614968956098">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614859434558" />
+    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614968956098" />
     <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613146224407" />
-    <state width="1877" height="232" key="GridCell.Tab.0.bottom" timestamp="1614845241868">
+    <state width="1877" height="232" key="GridCell.Tab.0.bottom" timestamp="1614964029787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614845241868" />
+    <state width="1877" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614964029787" />
     <state width="1876" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613319543383" />
     <state width="915" height="235" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="1877" height="232" key="GridCell.Tab.0.center" timestamp="1614845241867">
+    <state width="1877" height="232" key="GridCell.Tab.0.center" timestamp="1614964029786">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="232" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614845241867" />
+    <state width="1877" height="232" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614964029786" />
     <state width="1876" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613319543383" />
     <state width="915" height="235" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="1877" height="232" key="GridCell.Tab.0.left" timestamp="1614845241867">
+    <state width="1877" height="232" key="GridCell.Tab.0.left" timestamp="1614964029786">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="232" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614845241867" />
+    <state width="1877" height="232" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614964029786" />
     <state width="1876" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613319543383" />
     <state width="915" height="235" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="1877" height="232" key="GridCell.Tab.0.right" timestamp="1614845241868">
+    <state width="1877" height="232" key="GridCell.Tab.0.right" timestamp="1614964029787">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="232" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614845241868" />
+    <state width="1877" height="232" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614964029787" />
     <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613319543383" />
     <state width="915" height="235" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
     <state x="704" y="227" key="NewPhpClassDialog" timestamp="1614856207319">
@@ -292,10 +308,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613371091349" />
-    <state x="763" y="139" key="RollbackChangesDialog" timestamp="1614763048103">
+    <state x="763" y="139" key="RollbackChangesDialog" timestamp="1614861093815">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="763" y="139" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614763048103" />
+    <state x="763" y="139" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614861093815" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1614778692222">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -304,27 +320,47 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613321157014" />
-    <state x="601" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1614679816465">
+    <state x="601" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1614863450979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="601" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614679816465" />
+    <state x="601" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614863450979" />
     <state x="2183" y="153" width="1528" height="773" key="dock-window-1" timestamp="1614841601294">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2183" y="153" width="1528" height="773" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614841601294" />
-    <state x="458" y="133" width="952" height="566" key="find.popup" timestamp="1614846704800">
+    <state x="268" y="262" width="1528" height="762" key="dock-window-2" timestamp="1614924360361">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="458" y="133" width="952" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614846704800" />
+    <state x="268" y="262" width="1528" height="762" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614924360361" />
+    <state x="2059" y="-9" width="1528" height="762" maximized="true" key="dock-window-3" timestamp="1614940349164">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2059" y="-9" width="1528" height="762" maximized="true" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614940349164" />
+    <state x="2297" y="-17" width="1528" height="762" maximized="true" key="dock-window-4" timestamp="1614945091850">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2297" y="-17" width="1528" height="762" maximized="true" key="dock-window-4/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614945091850" />
+    <state x="1912" y="-8" width="1528" height="762" key="dock-window-5" timestamp="1614945898440">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1912" y="-8" width="1528" height="762" key="dock-window-5/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614945898440" />
+    <state x="2112" y="86" width="1528" height="762" key="dock-window-6" timestamp="1614950688527">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2112" y="86" width="1528" height="762" key="dock-window-6/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614950688527" />
+    <state x="458" y="133" width="952" height="566" key="find.popup" timestamp="1614953880905">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="458" y="133" width="952" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614953880905" />
     <state x="513" y="188" width="952" height="566" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614174634188" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1614673853675">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1614956590646">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614673853675" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614857064567">
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614956590646" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614970374932">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614857064567" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614970374932" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613311496911" />
   </component>
   <component name="XDebuggerManager">
@@ -337,22 +373,34 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue</url>
-          <line>113</line>
+          <line>114</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue</url>
-          <line>258</line>
+          <line>259</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/vue-element/src/components/Search/search.vue</url>
+          <line>43</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/vue-element/src/views/translate/index.vue</url>
+          <line>77</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php</url>
-          <line>135</line>
+          <line>143</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php</url>
-          <line>258</line>
+          <line>266</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>

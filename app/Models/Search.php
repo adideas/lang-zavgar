@@ -20,15 +20,15 @@ class Search extends Model
     {
         if (strlen($search) > 2) {
             if (strlen($search) <= 7 && iconv_strlen($search) <= 5) {
-                return self::selectRaw("account_id, entity_id, entity, searchable")
+                return self::selectRaw("id, entity_id, entity, searchable")
                     ->whereRaw("searchable LIKE '%$search%'");
             } else {
                 $search = preg_replace("/[^\w\x7F-\xFF\s]/", " ", strval($search));
                 $search = "+*$search*";
 
-                //return self::selectRaw("account_id, entity_id, entity, searchable, MATCH (searchable) AGAINST ('+*$search*' IN BOOLEAN MODE) `match`")
-                return self::selectRaw("account_id, entity_id, entity, searchable")
-                    ->whereRaw("MATCH (searchable) AGAINST ('$search' IN BOOLEAN MODE)");
+                return self::selectRaw("id, entity_id, entity, searchable")
+                    ->whereRaw("MATCH (searchable) AGAINST ('$search' IN BOOLEAN MODE)")
+                    ->orWhereRaw("searchable LIKE '%$search%'");
             }
         } else {
             die();
