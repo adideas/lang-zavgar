@@ -2,5 +2,5 @@ export default {
   path: 'files',
   component: () => import('@/views/files/index'),
   name: 'Files',
-  meta: { title: 'Файлы', icon: 'files' }
+  meta: { title: 'Файлы', icon: 'files', roles: ['show.App\\Models\\File'] }
 }

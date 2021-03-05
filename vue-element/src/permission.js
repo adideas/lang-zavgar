@@ -14,12 +14,12 @@ router.beforeEach(async(to, from, next) => {
   setTimeout(_ => NProgress.done(), 1500)
 
   if (get_access_token()) {
-    var access = store.getters.access && store.getters.access.length > 0
+    const access = store.getters.access && Object.keys(store.getters.access).length > 0
 
     if (!access) {
       try {
         store.dispatch('user/userInfo').then((data) => {
-          store.dispatch('permission/generateRoutes', ['admin', ...store.getters.access]).then(data => {
+          store.dispatch('permission/generateRoutes', store.getters.access).then(data => {
             router.addRoutes(data)
             next({ ...to, replace: true })
           }).catch(_ => {
@@ -44,29 +44,6 @@ router.beforeEach(async(to, from, next) => {
       next(`/login`)
     }
   }
-
-  /* try {
-    store.dispatch('user/userInfo').then((data) => {
-      store.dispatch('permission/generateRoutes', ['admin']).then(data => {
-        router.addRoutes(data)
-        next({ ...to, replace: true })
-        console.error(3)
-      }).catch(_ => {
-        store.commit('user/CLEAR_PASSPORT')
-        next(`/login`)
-        console.error(4)
-      })
-    }).catch(_ => {
-      store.commit('user/CLEAR_PASSPORT')
-      next(`/login`)
-      console.error(5)
-    })
-  } catch (error) {
-    Message.error(error || 'Has Error')
-    next(`/login`)
-    console.error(6)
-    return
-  }*/
 })
 
 router.afterEach(_ => NProgress.done())

@@ -20,7 +20,7 @@ class CurrentUserResource extends JsonResource
             'id'     => $this->id,
             'email'  => $this->email,
             'name'   => $this->name,
-            'access' => ['root']
+            'access' => auth()->user()->getAccess()
         ];
     }
 }

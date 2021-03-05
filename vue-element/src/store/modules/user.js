@@ -12,7 +12,7 @@ export default {
     id: '',
     name: '',
     email: '',
-    access: []
+    access: {}
   },
   mutations: {
     SET_PASSPORT: (state, data) => {
@@ -34,7 +34,7 @@ export default {
       state.id = data.id
       state.name = data.name
       state.email = data.email
-      state.access = data.access || []
+      state.access = data.access || {}
     }
   },
   actions: {
