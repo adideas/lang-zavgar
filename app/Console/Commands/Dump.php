@@ -27,10 +27,12 @@ class Dump extends Command
 
     public function handle()
     {
-        $access = User::find(1)->getAccess();
+        // exec('cd vue-element && git status', $output, $return_var);
+        exec('git status', $output, $return_var);
 
+        $output = implode("\n", $output);
 
-        dd(json_decode(json_encode($access)));
+        dd($output, $return_var);
     }
 }
 
