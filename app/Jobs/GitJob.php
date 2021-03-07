@@ -36,12 +36,21 @@ class GitJob implements ShouldQueue
             }
         }
         if ($this->command == 'gitMasterPush') {
-            foreach ($git->dir_git as $key => $name) {
+            if(strlen($this->commit) > 2) {
                 try {
-                    $git = new GitInject($name);
+                    $git = new GitInject($this->commit);
                     $git->gitMasterPush();
                 } catch (\Exception $e) {
                     dump($e);
+                }
+            } else {
+                foreach ($git->dir_git as $key => $name) {
+                    try {
+                        $git = new GitInject($name);
+                        $git->gitMasterPush();
+                    } catch (\Exception $e) {
+                        dump($e);
+                    }
                 }
             }
         }

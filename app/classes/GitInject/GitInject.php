@@ -86,6 +86,8 @@ class GitInject
 
     public function gitDevelopPush(string $name_commit)
     {
+        cache()->delete('git_dashboard_status');
+
         if($this->directory == '') {
             throw new \Exception('Не указана папка');
             return;
@@ -141,6 +143,13 @@ class GitInject
     public function getLastCommit()
     {
         $commands = ["git log -1"];
+
+        return $this->exec($commands, false);
+    }
+
+    public function getStatus()
+    {
+        $commands = ["git status -vvv"];
 
         return $this->exec($commands, false);
     }

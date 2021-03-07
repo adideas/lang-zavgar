@@ -26,6 +26,7 @@ Route::middleware(['auth:api'])->namespace('Api')->group(
 
         Route::apiResource('file', 'File\FileController');
         Route::apiResource('translate', 'Translate\TranslateController');
+        Route::get('dashboard', 'Translate\TranslateController@dashboard');
         Route::apiResource('language', 'Language\LanguageController');
         Route::post('search', 'Search\SearchController@search');
         //

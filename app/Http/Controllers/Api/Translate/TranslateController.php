@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Translate;
 use App\Http\Controllers\Controller;
 use App\Http\Filters\Filter\TranslateFilter;
 use App\Http\Requests\Api\Translate\TranslateRequest;
+use App\Http\Resources\Api\Dashboard\DashboardResource;
 use App\Http\Resources\Api\Translate\TranslateResource;
 use App\Jobs\GitJob;
 use App\Models\File;
@@ -67,6 +68,10 @@ class TranslateController extends Controller
 
     public function store(Request $request) {
         $this->authorize('create', Translate::class);
-        GitJob::dispatch('gitMasterPush', '')->delay(now()->addSecond(1));
+        GitJob::dispatch('gitMasterPush', $request->input('repo', ''))->delay(now()->addSecond(1));
+    }
+
+    public function dashboard() {
+        return DashboardResource::collection(collect(''))[0];
     }
 }

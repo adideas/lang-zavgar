@@ -5,9 +5,14 @@
     <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />
 
     <div class="right-menu">
+      <div v-if="$store.getters.access.root" class="avatar-container right-menu-item">
+        <div class="avatar-wrapper" @click="uploadToGithub">
+          <svg-icon icon-class="upload_github" class="user-avatar" />
+        </div>
+      </div>
       <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
         <div class="avatar-wrapper">
-          <img :src="avatar" class="user-avatar">
+          <svg-icon icon-class="driver" class="user-avatar" />
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown">
@@ -17,6 +22,11 @@
         </el-dropdown-menu>
       </el-dropdown>
     </div>
+
+    <el-dialog title="Отправка на github" append-to-body :visible.sync="dialog_upload_git" width="170px">
+      <el-progress type="dashboard" :percentage="percentage" :color="colors" />
+    </el-dialog>
+
   </div>
 </template>
 
@@ -24,6 +34,7 @@
 import { mapGetters } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
+import { store } from '@/api/api-laravel'
 
 export default {
   components: {
@@ -32,7 +43,16 @@ export default {
   },
   data() {
     return {
-      avatar: process.env.VUE_APP_BASE_HOST + 'storage/icon.png'
+      avatar: process.env.VUE_APP_BASE_HOST + 'storage/icon.png',
+      dialog_upload_git: false,
+      percentage: 10,
+      colors: [
+        { color: '#f56c6c', percentage: 20 },
+        { color: '#e6a23c', percentage: 40 },
+        { color: '#5cb87a', percentage: 60 },
+        { color: '#1989fa', percentage: 80 },
+        { color: '#6f7ad3', percentage: 100 }
+      ]
     }
   },
   computed: {
@@ -43,6 +63,27 @@ export default {
     ])
   },
   methods: {
+    uploadToGithub() {
+      if (this.$store.getters.access.root) {
+        this.$alert('Отправить код на github (master ветку) ?', 'Внимание', {
+          confirmButtonText: 'Отправить',
+          showCancelButton: true,
+          cancelButtonText: 'Отменить'
+        }).then(res => {
+          store('translate').then(res => {
+            this.dialog_upload_git = true
+            const interval = setInterval(() => {
+              this.percentage += 2
+              if (this.percentage >= 100) {
+                this.percentage = 0
+                this.dialog_upload_git = false
+                clearInterval(interval)
+              }
+            }, 200)
+          })
+        })
+      }
+    },
     toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
     },
