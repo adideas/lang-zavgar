@@ -8,6 +8,7 @@ use App\Http\Requests\Api\Translate\TranslateRequest;
 use App\Http\Resources\Api\Translate\TranslateResource;
 use App\Models\File;
 use App\Models\FileAndChildOnlyId;
+use App\Models\Helpers\FileTrait;
 use App\Models\Key;
 use App\Models\KeyAndChildOnlyId;
 use App\Models\Search;
@@ -16,6 +17,8 @@ use Illuminate\Http\Request;
 
 class TranslateController extends Controller
 {
+    use FileTrait;
+
     public function __construct()
     {
         $this->authorizeResource(Translate::class);
@@ -55,5 +58,7 @@ class TranslateController extends Controller
                 '0' . $request->input('language_id') => $request->input('value', null),
             ]
         );
+
+        $this->exportFile(File::find($translate->file_id));
     }
 }
