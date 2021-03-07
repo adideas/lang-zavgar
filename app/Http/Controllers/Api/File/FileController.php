@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\File;
 
 use App\Http\Controllers\Controller;
 use App\Http\Filters\Filter\FileFilter;
+use App\Jobs\GitJob;
 use App\Models\File;
 use App\Models\FileAndChild;
 use App\Models\Helpers\FileTrait;
@@ -11,7 +12,6 @@ use App\Models\Key;
 use App\Models\KeyAndChild;
 use App\Models\Language;
 use App\Models\Translate;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
@@ -50,6 +50,8 @@ class FileController extends Controller
             );
         }
 
+        GitJob::dispatch('gitDevelopPush', auth()->user()->name . ' (Создание) #' . auth()->user()->id)->delay(now()->addSecond(1));
+
         return $return;
     }
 
@@ -84,6 +86,8 @@ class FileController extends Controller
             );
         }
 
+        GitJob::dispatch('gitDevelopPush', auth()->user()->name . ' (Обновление) #' . auth()->user()->id)->delay(now()->addSecond(1));
+
         return $return;
     }
 
@@ -104,6 +108,7 @@ class FileController extends Controller
                 }
             );
         }
+        GitJob::dispatch('gitDevelopPush', auth()->user()->name . ' (Удаление) #' . auth()->user()->id)->delay(now()->addSecond(1));
     }
 
     public function deleteKey(Key $key, Request $request)

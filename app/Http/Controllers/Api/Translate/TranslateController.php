@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Filters\Filter\TranslateFilter;
 use App\Http\Requests\Api\Translate\TranslateRequest;
 use App\Http\Resources\Api\Translate\TranslateResource;
+use App\Jobs\GitJob;
 use App\Models\File;
 use App\Models\FileAndChildOnlyId;
 use App\Models\Helpers\FileTrait;
@@ -53,12 +54,19 @@ class TranslateController extends Controller
 
     public function update(TranslateRequest $request, Translate $translate)
     {
-        $translate->update(
+        /*$translate->update(
             [
                 '0' . $request->input('language_id') => $request->input('value', null),
             ]
         );
 
-        $this->exportFile(File::find($translate->file_id));
+        $this->exportFile(File::find($translate->file_id));*/
+
+        GitJob::dispatch('gitDevelopPush', auth()->user()->name . ' (Перевод) #' . auth()->user()->id)->delay(now()->addSecond(1));
+    }
+
+    public function store(Request $request) {
+        $this->authorize('create', Translate::class);
+        GitJob::dispatch('gitMasterPush', '')->delay(now()->addSecond(1));
     }
 }

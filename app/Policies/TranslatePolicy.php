@@ -22,7 +22,9 @@ class TranslatePolicy
 
     public function create(User $user)
     {
-        return false;
+        $access = $user->getAccess();
+
+        return $access['root'];
     }
 
     public function update(User $user, Translate $model)

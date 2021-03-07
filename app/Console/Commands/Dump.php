@@ -2,8 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\classes\GitInject\GitInject;
 use App\Models\Access;
 use App\Models\File;
+use App\Models\GitCommand;
 use App\Models\Helpers\FileTrait;
 use App\Models\Translate;
 use App\User;
@@ -27,12 +29,9 @@ class Dump extends Command
 
     public function handle()
     {
-        // exec('cd vue-element && git status', $output, $return_var);
-        exec('git status', $output, $return_var);
-
-        $output = implode("\n", $output);
-
-        dd($output, $return_var);
+        //
+        $g = new GitInject('test2');
+        dd($g->gitMasterPush());
     }
 }
 

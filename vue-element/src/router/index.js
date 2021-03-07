@@ -19,7 +19,8 @@ export const constantRoutes = [...constant_routes, {
     user,
     translate,
     files,
-    language
+    language,
+    { name: '*', path: '*', redirect: '/404', hidden: true }
   ]
 }]
 
