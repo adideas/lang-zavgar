@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="81654e0a-77d3-4949-89ca-6e5e2e4e2a10" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Dump.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Dump.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Git/GitController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/TranslatePolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/TranslatePolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/test2/az/test2.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/lang/test2/az/test2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/icons/svg/settings.svg" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/icons/svg/settings.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +239,7 @@
       <workItem from="1613543809212" duration="465000" />
       <workItem from="1614168680991" duration="77037000" />
       <workItem from="1614364600764" duration="70594000" />
-      <workItem from="1614773123458" duration="106803000" />
+      <workItem from="1614773123458" duration="107339000" />
     </task>
     <servers />
   </component>
