@@ -115,6 +115,17 @@
 
     <search :filter="['App\\Models\\Translate','App\\Models\\Key', 'App\\Models\\File']" :visible.sync="search_visible" @model="(e) => filter.model_id = e" />
 
+    <div class="el-pagination-container">
+      <el-pagination
+        background
+        layout="total, sizes, prev, pager, next"
+        :current-page.sync="translations.meta.current_page"
+        :total="translations.meta.total"
+        :page-sizes="[10, 20, 40]"
+        @size-change="(e) => {query_back.to = e;getTranslate()}"
+        @current-change="(e) => {query_back.page = e; getTranslate()}"
+      />
+    </div>
   </div>
 </template>
 
@@ -128,6 +139,10 @@ export default {
   components: { Search },
   data() {
     return {
+      query_back: {
+        to: 10,
+        page: 1
+      },
       filter: { select: '', language: [], model_id: 0 },
       show_name_keys: false,
       search_visible: false,
@@ -135,7 +150,6 @@ export default {
         data: [],
         meta: {
           current_page: 1,
-          to: 10,
           total: 0
         }
       },
@@ -171,12 +185,14 @@ export default {
     getTranslate() {
       this.loading = true
       const query = {
-        to: this.translations.meta.per_page,
+        to: this.query_back.to,
+        page: this.query_back.page,
         filter: this.filter
       }
 
       list('translate', query).then(res => {
         this.translations = res.data || {}
+        document.querySelector('.el-pagination__total').innerHTML = 'Кол-во: ' + this.translations.meta.total
       }).finally(_ => {
         this.loading = false
       })

@@ -12,6 +12,18 @@
                                   not supported by any browser */
 }
 
+.el-pagination-container {
+  position: fixed;
+  bottom: 0;
+  background: #cbcbd2;
+  width: 100%;
+  height: 66px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .el-breadcrumb__inner,
 .el-breadcrumb__inner a {
   font-weight: 400 !important;

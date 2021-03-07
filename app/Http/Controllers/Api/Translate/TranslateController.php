@@ -50,6 +50,7 @@ class TranslateController extends Controller
 
 
 
+        // return TranslateResource::collection($translate->with('key:id,name,description')->paginate(2));
         return TranslateResource::collection($translate->with('key:id,name,description')->paginate($request->to ?: 10));
     }
 
