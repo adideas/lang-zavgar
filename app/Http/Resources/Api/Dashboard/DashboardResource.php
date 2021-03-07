@@ -3,13 +3,15 @@
 namespace App\Http\Resources\Api\Dashboard;
 
 use App\classes\GitInject\GitInject;
+use App\Models\Language;
+use App\Models\Translate;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class DashboardResource extends JsonResource
 {
     public function toArray($request)
     {
-        $repos = cache()->rememberForever('git_dashboard_status', function () {
+        $data = cache()->rememberForever('git_dashboard_status', function () {
             $repos = [];
 
             $gitInject = new GitInject();
@@ -26,12 +28,19 @@ class DashboardResource extends JsonResource
                 ]);
             }
 
-            return $repos;
+            return [
+                'git' => $repos,
+                'key_status' => [
+                    Translate::count(),
+                    Translate::where(function ($builder) {
+                        Language::pluck('id')->map(fn($x) => '0' . $x)
+                            ->each(fn($lang) => $builder->orWhereNull($lang));
+                    })->count()
+                ]
+            ];
         });
 
 
-        return [
-            'git' => $repos,
-        ];
+        return $data;
     }
 }

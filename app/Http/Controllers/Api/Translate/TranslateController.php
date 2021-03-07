@@ -64,7 +64,7 @@ class TranslateController extends Controller
 
         $this->exportFile(File::find($translate->file_id));
 
-        GitJob::dispatch('gitDevelopPush', auth()->user()->name . ' (Перевод) #' . auth()->user()->id)->delay(now()->addSecond(1));
+        GitJob::dispatch('gitDevelopPush', auth()->user()->name . ' ' . auth()->user()->email . ' (Перевод) #' . auth()->user()->id)->delay(now()->addSecond(1));
     }
 
     public function store(Request $request) {

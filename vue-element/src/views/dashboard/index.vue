@@ -1,6 +1,29 @@
 <template>
   <div class="app-container" style="background: #e0e0e0; min-height: calc(100vh - 84px);">
     <div v-if="$store.getters.access.root">
+
+      <div
+        class="el-col-xs-24 el-col-sm-11 el-col-sm-offset-1 el-col-md-11 el-col-md-offset-1 el-col-lg-11 el-col-lg-offset-1 el-col-xl-11 el-col-xl-offset-1 el-col-12"
+        style="margin-top: 10px"
+      >
+        <el-card header="Статус перевода ключей">
+          <div class="el-col-24">
+            <div class="el-col-12 my_dashboard_class success" style="font-size: 30px; font-weight: 700;">
+              <vue-count-to :start-val="0" :end-val="data.key_status[0]" />
+            </div>
+            <div class="el-col-12 my_dashboard_class warning" style="font-size: 30px; font-weight: 700;">
+              <vue-count-to :start-val="0" :end-val="data.key_status[1]" />
+            </div>
+            <div class="el-col-12 my_dashboard_class success">
+              Всего
+            </div>
+            <div class="el-col-12 my_dashboard_class warning">
+              Без перевода
+            </div>
+          </div>
+        </el-card>
+      </div>
+
       <div
         v-for="(el, index) in data.git"
         :key="index"
@@ -25,6 +48,7 @@
           <!-- ---------------------------------- -->
         </el-card>
       </div>
+
     </div>
     <div v-else>
       <el-card header="Перевод">
@@ -47,9 +71,11 @@
 import { list, store } from '@/api/api-laravel'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github.css'
+import VueCountTo from 'vue-count-to'
 
 export default {
   name: 'Dashboard',
+  components: { VueCountTo },
   data() {
     return {
       data: {},
@@ -111,3 +137,12 @@ export default {
   }
 }
 </script>
+<style scoped lang="scss">
+.my_dashboard_class {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+  font-size: 19px;
+}
+</style>
