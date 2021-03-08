@@ -56,9 +56,13 @@ class TranslateController extends Controller
 
     public function update(TranslateRequest $request, Translate $translate)
     {
+        $value = $request->input('value', null);
+
+        $value = $value && strlen($value) ? $value : null;
+
         $translate->update(
             [
-                '0' . $request->input('language_id') => $request->input('value', null),
+                '0' . $request->input('language_id') => $value ,
             ]
         );
 

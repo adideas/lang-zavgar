@@ -228,7 +228,7 @@ export default {
       this.closePopover(refs)
     },
     clearTranslate(ev, refs, index, lang, entity_id) {
-      this.translations[index]['0' + lang] = null
+      this.translations.data[index]['0' + lang] = null
       this.translations = Object.assign(this.translations)
       this.sendServer(entity_id, lang, null)
       this.closePopover(refs)
