@@ -36,6 +36,7 @@
             <el-col style="cursor: pointer;">
 
               <el-popover
+                v-if="canUserUpdate('0' + language.id)"
                 :ref="index + '-' + language.id + '-' + row.$index"
                 placement="bottom"
                 width="300"
@@ -92,6 +93,13 @@
                 </span>
 
               </el-popover>
+
+              <div v-else>
+                <div v-if="row.row['0' + language.id]" class="is_translate_no_update">
+                  {{ row.row['0' + language.id] }}
+                </div>
+                <div v-else class="is_not_translate_no_update" />
+              </div>
 
             </el-col>
           </div>
@@ -182,6 +190,15 @@ export default {
     })
   },
   methods: {
+    canUserUpdate(lang_id) {
+      if (this.$store.getters.access.root) {
+        return true
+      }
+      if (this.$store.getters.access && this.$store.getters.access.translate && this.$store.getters.access.translate.update) {
+        return this.$store.getters.access.translate.update.indexOf(lang_id) >= 0
+      }
+      return false
+    },
     getTranslate() {
       this.loading = true
       const query = {
@@ -287,8 +304,24 @@ export default {
     cursor: pointer;
   }
 }
+.is_translate_no_update {
+  font-style: italic;
+  color: #4b4b99;
+  &:hover {
+    cursor: default;
+  }
+}
 .is_not_translate {
   background: #ff9c9c;
   padding: 23px;
+  border: 2px dashed #000000;
+  border-radius: 7px;
+}
+.is_not_translate_no_update {
+  border: 2px dashed #c1c1c1;
+  border-radius: 7px;
+  background: #e6e6e6;
+  padding: 23px;
+  cursor: default;
 }
 </style>
