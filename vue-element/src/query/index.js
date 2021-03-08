@@ -114,7 +114,9 @@ export default {
       },
       beforeCreate() {
         if (this.$options['query']) {
-          this.$options['query'](window.query)
+          setTimeout(() => {
+            this.$options['query'].bind(this)(window.query)
+          }, 1)
         }
       }
     })

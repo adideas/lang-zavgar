@@ -22,12 +22,13 @@
       </el-select>
       <!-- ----------------------------------------------------------- -->
       <el-button type="success" size="mini" @click="getTranslate">Показать</el-button>
+      <el-button v-if="filter.model_id" type="danger" size="mini" @click="() => {filter.model_id = 0; getTranslate()}">Очистить фильтр по поиску</el-button>
     </div>
 
     <!-- ----------------------------------------------------------- -->
 
     <el-table :data="translations.data">
-      <el-table-column v-for="(language, index) in languages_c" :key="index" :label="language.id ? `${language.description} [${language.name}]` : ''">
+      <el-table-column v-for="(language, index) in languages_c(translations.data[0])" :key="index" :label="language.id ? `${language.description} [${language.name}]` : ''">
 
         <!-- ----------------------------------------------------------- -->
 
@@ -121,7 +122,7 @@
       </el-table-column>
     </el-table>
 
-    <search :filter="['App\\Models\\Translate','App\\Models\\Key', 'App\\Models\\File']" :visible.sync="search_visible" @model="(e) => filter.model_id = e" />
+    <search :filter="['App\\Models\\Translate','App\\Models\\Key', 'App\\Models\\File']" :visible.sync="search_visible" @model="(e) => {filter.model_id = e; getTranslate()}" />
 
     <div class="el-pagination-container">
       <el-pagination
@@ -166,19 +167,11 @@ export default {
       loading: true
     }
   },
-  computed: {
-    languages_c() {
-      if (this.filter.language.length && this.filter.language.length !== this.languages.length) {
-        return [{ id: 0 }, ...this.languages.filter(x => this.filter.language.indexOf(x.id) >= 0)]
-      }
-      return [{ id: 0 }, ...this.languages]
-    }
-  },
   watch: {
     'filter': watcherQuery
   },
   query(query) {
-    console.error(query)
+    this.filter = Object.assign(this.filter, query)
   },
   created() {
     list('language').then(res => {
@@ -190,6 +183,13 @@ export default {
     })
   },
   methods: {
+    languages_c(e) {
+      if (e) {
+        const ids = Object.keys(e).map(x => parseInt(x)).filter(x => x)
+        return [{ id: 0 }, ...this.languages.filter(x => ids.indexOf(x.id) >= 0)]
+      }
+      return [{ id: 0 }, ...this.languages]
+    },
     canUserUpdate(lang_id) {
       if (this.$store.getters.access.root) {
         return true

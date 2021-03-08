@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="81654e0a-77d3-4949-89ca-6e5e2e4e2a10" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Api/Translate/TranslateResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Api/Translate/TranslateResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/query/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/query/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -239,7 +241,7 @@
       <workItem from="1613543809212" duration="465000" />
       <workItem from="1614168680991" duration="77037000" />
       <workItem from="1614364600764" duration="70594000" />
-      <workItem from="1614773123458" duration="120331000" />
+      <workItem from="1614773123458" duration="122566000" />
     </task>
     <servers />
   </component>
@@ -370,7 +372,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vue-element/src/views/translate/index.vue</url>
-          <line>78</line>
+          <line>79</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="31" />
         </line-breakpoint>
@@ -385,6 +387,12 @@
           <line>48</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/vue-element/src/views/translate/index.vue</url>
+          <line>24</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php</url>
