@@ -3,7 +3,7 @@
     <el-form>
       <el-form-item>
         <div style="min-width: 100%; display: flex;">
-          ${language} => Заменяется на [ru, en ...]
+          ${language} ${language_name} => Заменяется на [ru, en ...]
         </div>
       </el-form-item>
       <el-form-item label="Название">

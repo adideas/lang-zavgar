@@ -43,7 +43,7 @@ class Language extends Model
 
                         if ($is_created < 1) {
                             Schema::table($table_name, function (Blueprint $table) use ($language) {
-                                $table->string('0'. $language->id)
+                                $table->string('0'. $language->id, 1000)
                                     ->nullable()
                                     ->comment($language->name . " - " . $language->description);
                             });

@@ -28,7 +28,7 @@ class Key extends Model
                         ]
                     )->forceDelete();
                 }
-                $string = 'file_controller_create_key_translate_'.auth()->user()->id;
+                $string = 'file_controller_create_key_translate_'.(auth()->check() ? auth()->user()->id : 0);
                 $value = Cache::get($string, null);
                 Cache::forget($string);
                 if (!$value) {
@@ -36,7 +36,7 @@ class Key extends Model
                         [
                             'key_id'  => $key->id,
                             'file_id' => $key->file_id,
-                            'user_id' => auth()->user()->id,
+                            'user_id' => (auth()->check() ? auth()->user()->id : 0),
                         ]
                     );
                 }

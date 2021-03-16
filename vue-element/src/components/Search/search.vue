@@ -12,20 +12,22 @@
             <el-button icon="el-icon-search" @click="startSearch(search.text)" />
           </template>
         </el-input>
-        <el-table :data="search.data" empty-text="Ничего не найдено" @cell-click="clickSearch">
-          <el-table-column width="50">
-            <template slot-scope="{ row }">
-              <svg-icon :icon-class="icon(row)" />
-            </template>
-          </el-table-column>
-          <el-table-column>
-            <template slot-scope="{ row }">
-              <el-col style="cursor: pointer;">
-                {{ text(row) }}
-              </el-col>
-            </template>
-          </el-table-column>
-        </el-table>
+        <div style="overflow-y: scroll; height: calc(100vh - 200px);">
+          <el-table :data="search.data" empty-text="Ничего не найдено" @cell-click="clickSearch">
+            <el-table-column width="50">
+              <template slot-scope="{ row }">
+                <svg-icon :icon-class="icon(row)" />
+              </template>
+            </el-table-column>
+            <el-table-column>
+              <template slot-scope="{ row }">
+                <el-col style="cursor: pointer;">
+                  {{ text(row) }}
+                </el-col>
+              </template>
+            </el-table-column>
+          </el-table>
+        </div>
       </div>
     </el-drawer>
   </div>

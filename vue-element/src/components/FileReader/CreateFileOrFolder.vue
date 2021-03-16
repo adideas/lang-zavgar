@@ -1,6 +1,11 @@
 <template>
   <div>
     <el-form>
+      <el-form-item>
+        <div style="min-width: 100%; display: flex;">
+          ${language} ${language_name} => Заменяется на [ru, en ...]
+        </div>
+      </el-form-item>
       <el-form-item label="Название">
         <el-input v-model="el.name" />
       </el-form-item>
@@ -81,7 +86,7 @@ export default {
 export function recursive_add_file(files = [], copy_buffer) {
   return new Promise(resolve => {
     files.forEach(file => {
-      if (file.name === copy_buffer.name && file.description === copy_buffer.description) {
+      if (file.name === copy_buffer.name && file.description === copy_buffer.description && file.id === copy_buffer.id) {
         resolve(file)
       } else {
         if (file.files) {

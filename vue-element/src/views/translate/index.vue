@@ -27,7 +27,7 @@
 
     <!-- ----------------------------------------------------------- -->
 
-    <el-table :data="translations.data">
+    <el-table style="padding-bottom: 80px;" :data="translations.data">
       <el-table-column v-for="(language, index) in languages_c(translations.data[0])" :key="index" :label="language.id ? `${language.description} [${language.name}]` : ''">
 
         <!-- ----------------------------------------------------------- -->

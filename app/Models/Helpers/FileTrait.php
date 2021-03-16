@@ -18,8 +18,8 @@ trait FileTrait
         $path = implode(DIRECTORY_SEPARATOR, explode('/', $path));
 
         $path = str_replace(
-            [DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR, '${language}'],
-            [DIRECTORY_SEPARATOR, $language->name . DIRECTORY_SEPARATOR],
+            [DIRECTORY_SEPARATOR . DIRECTORY_SEPARATOR, '${language}', '${language_name}'],
+            [DIRECTORY_SEPARATOR, $language->name . DIRECTORY_SEPARATOR, $language->name],
             storage_path($path)
         );
 

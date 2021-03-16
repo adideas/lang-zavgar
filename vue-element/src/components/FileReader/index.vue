@@ -1,5 +1,5 @@
 <template>
-  <div v-loading="count_loading > 0" style="background-color: #d4d4d4;display: flow-root; height: calc(100vh - 84px);" class="unselectable file-reader" @contextmenu.prevent="contextmenu('plane', $event)">
+  <div v-loading="count_loading > 0" style="background-color: #d4d4d4;display: flow-root; height: calc(100vh - 84px);overflow: auto;" class="unselectable file-reader" @contextmenu.prevent="contextmenu('plane', $event)">
     <div style="min-width: 100%; padding: 5px;">
       <div class="el-col-24">
         <table style="width: 100%;">
