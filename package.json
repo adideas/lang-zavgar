@@ -1,4 +1,9 @@
 {
+    "name": "Lang Zavgar Online",
+    "version": "0.0.1",
+    "description": "Translates language",
+    "author": "Алексей Власов <adideas@mail.ru>",
+    "license": "MIT",
     "private": true,
     "scripts": {
         "dev": "npm run dev --prefix vue-element",
