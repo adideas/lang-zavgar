@@ -86,30 +86,32 @@ class GitInject
 
     public function gitDevelopPush(string $name_commit)
     {
-        cache()->delete('git_dashboard_status');
+        // cache()->delete('git_dashboard_status');
 
         if($this->directory == '') {
             throw new \Exception('Не указана папка');
             return;
         }
+
         if (!in_array('develop', $this->branches)) {
             if ($this->branch != 'master') {
                 throw new \Exception('git add Только в ветке master');
             }
-            $command = ["git add .", 'git commit -m "' . $name_commit . '"'];
+            // $command = ["git add .", 'git commit -m "' . $name_commit . '"'];
+            $command = ["git add .", "eval \"git commit -m '$name_commit'\""];
             if ($this->remote) {
-                $command[] = 'git push';
+                $command[] = "eval \"git push\"";
             }
             $this->exec($command);
         } else {
-            if ($this->branch != 'develop') {
-                throw new \Exception('git add Только в ветке develop');
+            if ($this->branch == 'develop') {
+                $command = ["git add .", "eval \"git commit -m '$name_commit'\""];
+                if ($this->remote) {
+                    $command[] = "eval \"git push\"";
+                }
+                $this->exec($command);
+                // throw new \Exception('git add Только в ветке develop');
             }
-            $command = ["git add .", 'git commit -m "' . $name_commit . '"'];
-            if ($this->remote) {
-                $command[] = 'git push';
-            }
-            $this->exec($command);
         }
     }
 
@@ -128,14 +130,18 @@ class GitInject
         }
         // git merge -s recursive -Xtheirs master https://habr.com/ru/post/195674/
         $command = [
-            'git checkout master',
-            'git merge -s recursive -Xtheirs develop',
+            "eval \"git checkout master\"",
+            "eval \"git merge -s recursive -Xtheirs develop\"",
+            // 'git checkout master',
+            // 'git merge -s recursive -Xtheirs develop',
         ];
 
         if ($this->remote) {
-            $command[] = 'git push';
+            // $command[] = 'git push';
+            $command[] = "eval \"git push\"";
         }
-        $command[] = 'git checkout develop';
+        // $command[] = 'git checkout develop';
+        $command[] = "eval \"git checkout develop\"";
 
         $this->exec($command);
     }

@@ -32,6 +32,7 @@ class GitJob implements ShouldQueue
                     $git->gitDevelopPush($this->commit);
                 } catch (\Exception $e) {
                     dump($e);
+                    throw new \Exception($e);
                 }
             }
         }
@@ -42,6 +43,7 @@ class GitJob implements ShouldQueue
                     $git->gitMasterPush();
                 } catch (\Exception $e) {
                     dump($e);
+                    throw new \Exception($e);
                 }
             } else {
                 foreach ($git->dir_git as $key => $name) {
@@ -50,6 +52,7 @@ class GitJob implements ShouldQueue
                         $git->gitMasterPush();
                     } catch (\Exception $e) {
                         dump($e);
+                        throw new \Exception($e);
                     }
                 }
             }

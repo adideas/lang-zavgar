@@ -11,36 +11,37 @@ class DashboardResource extends JsonResource
 {
     public function toArray($request)
     {
-        $data = cache()->rememberForever('git_dashboard_status', function () {
-            $repos = [];
+        /*$data = cache()->rememberForever('git_dashboard_status', function () {
 
-            $gitInject = new GitInject();
+        });*/
 
-            foreach ($gitInject->dir_git as $k_ => $name) {
-                $git = new GitInject($name);
-                $repos = array_replace($repos, [
-                    $name => [
-                        'branch' => $git->branch,
-                        'branches' => $git->branches,
-                        'last_commit' => $git->getLastCommit(),
-                        'status' => $git->getStatus(),
-                    ]
-                ]);
-            }
+        $repos = [];
 
-            return [
-                'git' => $repos,
-                'key_status' => [
-                    Translate::count(),
-                    Translate::where(function ($builder) {
-                        Language::pluck('id')->map(fn($x) => '0' . $x)
-                            ->each(fn($lang) => $builder->orWhereNull($lang));
-                    })->count()
+        $gitInject = new GitInject();
+
+        foreach ($gitInject->dir_git as $k_ => $name) {
+            $git = new GitInject($name);
+            $repos = array_replace($repos, [
+                $name => [
+                    'branch' => $git->branch,
+                    'branches' => $git->branches,
+                    'last_commit' => $git->getLastCommit(),
+                    'status' => $git->getStatus(),
                 ]
-            ];
-        });
+            ]);
+        }
 
+        return [
+            'git' => $repos,
+            'key_status' => [
+                Translate::count(),
+                Translate::where(function ($builder) {
+                    Language::pluck('id')->map(fn($x) => '0' . $x)
+                        ->each(fn($lang) => $builder->orWhereNull($lang));
+                })->count()
+            ]
+        ];
 
-        return $data;
+        // return $data;
     }
 }

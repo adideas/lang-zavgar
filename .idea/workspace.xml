@@ -5,27 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81654e0a-77d3-4949-89ca-6e5e2e4e2a10" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Dump.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Dump.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Helpers/FileTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Helpers/FileTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Key.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Key.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Language.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Language.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/new_folder2/test.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/test2/az/test2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/test2/en/auth431.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/test2/en/test2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/test2/es/test2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/test2/ru/auth431.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/lang/test2/ru/test2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/CreateFileOrFolder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/CreateFileOrFolder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/PropertiesFolderAndFile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/PropertiesFolderAndFile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/components/Search/search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/Search/search.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/styles/element-ui.scss" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/styles/element-ui.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Api/Dashboard/DashboardResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Api/Dashboard/DashboardResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Jobs/GitJob.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/GitJob.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/GitInject/GitInject.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/GitInject/GitInject.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +243,7 @@
       <workItem from="1614168680991" duration="77037000" />
       <workItem from="1614364600764" duration="70594000" />
       <workItem from="1614773123458" duration="122629000" />
-      <workItem from="1615874092939" duration="15856000" />
+      <workItem from="1615874092939" duration="23372000" />
     </task>
     <servers />
   </component>
@@ -282,29 +265,29 @@
     </state>
     <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615898372189" />
     <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613146224407" />
-    <state width="1877" height="232" key="GridCell.Tab.0.bottom" timestamp="1615874945403">
+    <state width="1877" height="232" key="GridCell.Tab.0.bottom" timestamp="1615909715269">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615204912220" />
-    <state width="1877" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615874945403" />
+    <state width="1877" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615909715269" />
     <state width="915" height="235" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="1877" height="232" key="GridCell.Tab.0.center" timestamp="1615874945402">
+    <state width="1877" height="232" key="GridCell.Tab.0.center" timestamp="1615909715269">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="232" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615204912219" />
-    <state width="1877" height="232" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615874945402" />
+    <state width="1877" height="232" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615909715269" />
     <state width="915" height="235" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="1877" height="232" key="GridCell.Tab.0.left" timestamp="1615874945402">
+    <state width="1877" height="232" key="GridCell.Tab.0.left" timestamp="1615909715269">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="232" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615204912219" />
-    <state width="1877" height="232" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615874945402" />
+    <state width="1877" height="232" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615909715269" />
     <state width="915" height="235" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="1877" height="232" key="GridCell.Tab.0.right" timestamp="1615874945402">
+    <state width="1877" height="232" key="GridCell.Tab.0.right" timestamp="1615909715269">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="232" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615204912219" />
-    <state width="1877" height="232" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615874945402" />
+    <state width="1877" height="232" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615909715269" />
     <state width="915" height="235" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
     <state x="704" y="227" key="NewPhpClassDialog" timestamp="1615116665782">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -355,20 +338,20 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2112" y="86" width="1528" height="762" key="dock-window-6/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614950688527" />
-    <state x="2295" y="228" width="952" height="566" key="find.popup" timestamp="1615893049033">
+    <state x="2295" y="228" width="952" height="566" key="find.popup" timestamp="1615908411440">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2295" y="228" width="952" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615893049033" />
+    <state x="2295" y="228" width="952" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615908411440" />
     <state x="513" y="188" width="952" height="566" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614174634188" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1614956590646">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614956590646" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1615891839186">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1615909131477">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615891839186" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615874773783" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615907187118" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615909131477" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
