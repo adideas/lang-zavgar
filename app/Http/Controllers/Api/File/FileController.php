@@ -20,6 +20,11 @@ class FileController extends Controller
 {
     use FileTrait;
 
+    public function __construct()
+    {
+        set_time_limit(400);
+    }
+
     /*public function __construct()
     {
         $this->authorizeResource(File::class);
@@ -135,7 +140,7 @@ class FileController extends Controller
     public function propertyKey(Key $key, Request $request)
     {
         $key->name        = $request->input('next.name');
-        $key->description = $request->input('next.description');
+        $key->description = $request->input('next.description', $request->input('next.name'));
         $key->indexed     = [...array_slice($key->indexed, 0, count($key->indexed) - 1), $key->name];
         $key->save();
         $this->reIndexedChildrenKey($key);
@@ -152,7 +157,7 @@ class FileController extends Controller
             ->unique();
 
         $file->name        = $request->input('next.name');
-        $file->description = $request->input('next.description');
+        $file->description = $request->input('next.description', $request->input('next.name'));
         $file->save();
         $this->rePathChildrenFile($file);
 
@@ -175,7 +180,7 @@ class FileController extends Controller
         $file = File::create(
             [
                 'name'        => $request->input('data.name'),
-                'description' => $request->input('data.description'),
+                'description' => $request->input('data.description', $request->input('data.name')),
                 'is_file'     => $request->input('data.is_file'),
                 'parent'      => $request->input('parent'),
                 'file_type'   => $request->input('data.is_file') == 0 ? null : $request->input('data.file_type'),
@@ -213,7 +218,7 @@ class FileController extends Controller
         $key = Key::create(
             [
                 'name'        => $request->input('data.name'),
-                'description' => $request->input('data.description'),
+                'description' => $request->input('data.description', $request->input('data.name')),
                 'file_id'     => $request->input('file_id'),
                 'parent'      => $request->input('parent'),
                 'indexed'     => [$request->input('data.name')],

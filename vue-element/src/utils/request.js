@@ -3,7 +3,7 @@ import { Message } from 'element-ui'
 import store from '@/store'
 
 // create an axios instance
-const service = axios.create({ baseURL: process.env.VUE_APP_BASE_HOST + 'api', withCredentials: true, timeout: 30000 })
+const service = axios.create({ baseURL: process.env.VUE_APP_BASE_HOST + 'api', withCredentials: true, timeout: 400000 })
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 
