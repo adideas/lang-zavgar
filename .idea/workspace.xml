@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81654e0a-77d3-4949-89ca-6e5e2e4e2a10" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/congig_git" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +180,7 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/storage/logs/laravel.log" />
     <property name="js.ns.project" value="true" />
     <property name="js.ns.project.flavor" value="JavaScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue-element/src/router/menu" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/storage" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -191,18 +192,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\public\storage" />
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\public" />
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\public" />
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src\router\menu" />
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Models" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\public\storage" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src\query" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Models" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\app" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src\router\menu" />
-      <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Models" />
-      <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src" />
-      <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src\views\translate" />
-      <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src\views\files\components" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
@@ -241,7 +243,7 @@
       <workItem from="1614168680991" duration="77037000" />
       <workItem from="1614364600764" duration="70594000" />
       <workItem from="1614773123458" duration="122629000" />
-      <workItem from="1615874092939" duration="24603000" />
+      <workItem from="1615874092939" duration="27974000" />
     </task>
     <servers />
   </component>
@@ -249,6 +251,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="717" y="310" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1615974324133">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="717" y="310" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615974324133" />
     <state x="743" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613148409261">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -386,12 +392,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php</url>
-          <line>148</line>
+          <line>153</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php</url>
-          <line>271</line>
+          <line>276</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
