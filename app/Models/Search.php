@@ -20,6 +20,16 @@ class Search extends Model
     {
         if (strlen($search) > 2) {
             if (strlen($search) <= 7 && iconv_strlen($search) <= 5) {
+                if(Search::where('searchable', 'LIKE', "% ".$search." %")->count() > 0) {
+                    return self::selectRaw("id, entity_id, entity, searchable")
+                        ->orWhereRaw("searchable LIKE '% ".$search." %'");
+                }
+
+                if(Search::where('searchable', 'LIKE', $search." %")->count() > 0) {
+                    return self::selectRaw("id, entity_id, entity, searchable")
+                        ->orWhereRaw("searchable LIKE '".$search." %'");
+                }
+
                 if(Search::where('searchable', 'LIKE', "%".$search."%")->count() > 0) {
                     return self::selectRaw("id, entity_id, entity, searchable")
                         ->orWhereRaw("searchable LIKE '%".$search."%'");
@@ -33,6 +43,16 @@ class Search extends Model
                     ->whereRaw("searchable LIKE '%$search%'");
             } else {
                 $search = preg_replace("/[^\w\x7F-\xFF\s]/", "%", strval($search));
+
+                if(Search::where('searchable', 'LIKE', "% ".$search." %")->count() > 0) {
+                    return self::selectRaw("id, entity_id, entity, searchable")
+                        ->orWhereRaw("searchable LIKE '% ".$search." %'");
+                }
+
+                if(Search::where('searchable', 'LIKE', $search." %")->count() > 0) {
+                    return self::selectRaw("id, entity_id, entity, searchable")
+                        ->orWhereRaw("searchable LIKE '".$search." %'");
+                }
 
                 if(Search::where('searchable', 'LIKE', "%".$search."%")->count() > 0) {
                     return self::selectRaw("id, entity_id, entity, searchable")
