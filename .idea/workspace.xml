@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="81654e0a-77d3-4949-89ca-6e5e2e4e2a10" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Dump.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Dump.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +242,8 @@
       <workItem from="1614168680991" duration="77037000" />
       <workItem from="1614364600764" duration="70594000" />
       <workItem from="1614773123458" duration="122629000" />
-      <workItem from="1615874092939" duration="28374000" />
+      <workItem from="1615874092939" duration="29036000" />
+      <workItem from="1615994879754" duration="26751000" />
     </task>
     <servers />
   </component>
@@ -263,33 +264,33 @@
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614793315003" />
     <state x="2610" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613318162909" />
-    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615898372189">
+    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616064035999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615898372189" />
+    <state x="364" y="135" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616064035999" />
     <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1613146224407" />
-    <state width="1877" height="232" key="GridCell.Tab.0.bottom" timestamp="1615909715269">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="232" key="GridCell.Tab.0.bottom" timestamp="1615976170704">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615204912220" />
+    <state width="1877" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615976170704" />
     <state width="1877" height="232" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615909715269" />
     <state width="915" height="235" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="1877" height="232" key="GridCell.Tab.0.center" timestamp="1615909715269">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="232" key="GridCell.Tab.0.center" timestamp="1615976170704">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="232" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615204912219" />
+    <state width="1877" height="232" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615976170704" />
     <state width="1877" height="232" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615909715269" />
     <state width="915" height="235" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="1877" height="232" key="GridCell.Tab.0.left" timestamp="1615909715269">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="232" key="GridCell.Tab.0.left" timestamp="1615976170703">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="232" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615204912219" />
+    <state width="1877" height="232" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615976170703" />
     <state width="1877" height="232" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615909715269" />
     <state width="915" height="235" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
-    <state width="1877" height="232" key="GridCell.Tab.0.right" timestamp="1615909715269">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="232" key="GridCell.Tab.0.right" timestamp="1615976170704">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="232" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615204912219" />
+    <state width="1877" height="232" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615976170704" />
     <state width="1877" height="232" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615909715269" />
     <state width="915" height="235" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614169172726" />
     <state x="704" y="227" key="NewPhpClassDialog" timestamp="1615116665782">
@@ -313,6 +314,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1613321157014" />
+    <state x="2000" y="86" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1616049784179">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2000" y="86" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1616049784179" />
     <state x="601" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1614863450979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -350,10 +355,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1614956590646" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1615966700807">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1615995013795">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615966700807" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1615995013795" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1615909131477" />
   </component>
   <component name="XDebuggerManager">

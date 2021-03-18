@@ -34,245 +34,104 @@ class Dump extends Command
 
     public function handle()
     {
-        //
+       //
     }
 }
 
+
+// dd(Key::whereJsonContains('indexed', $indexed_[0])->first());
+/*DB::table('ltm_translations')
+    ->where('group', $data->group)
+    ->where('key', $data->key)
+    ->get()->each(
+        function($translate) use () {
+            $language = Language::where('name', $translate->locale)->first();
+
+            Translate::where('key_id', )
+                       }
+    );*/
 
 // http://bit-booster.com/graph.html
 // https://gitgraphjs.com/#0
 // http://bsara.github.io/git-grapher/
 // https://qastack.ru/programming/1057564/pretty-git-branch-graphs
 
-
 // TODO translates_keys_key_id_foreign
 
-
-/* TODO DB::table('ltm_translations')
-    // ->where('group', 'LIKE', 'mobile/%')
+/*DB::table('ltm_translations')
+    ->orderByDesc('key')
+    ->selectRaw('DISTINCT `key`, `group`')
+    ->where('group', 'LIKE', 'mobile/%')
     // ->where('group', 'LIKE', 'front/%')
-    ->get()->each(
+    ->get()
+    ->each(
         function ($data) {
-            $lang_id = Language::where('name', $data->locale)->first()->id;
+            dump($data->key);
+            $indexed = explode('|', $data->key);
+            $file_id = 96;
 
-            preg_match('/front\//', $data->group, $front);
-            preg_match('/mobile\//', $data->group, $mobile);
+            if (count($indexed) == 1) {
+                $parent = Key::where('file_id', $file_id)
+                    ->where('indexed', 'LIKE', '%' . implode('%', [$indexed[0]]) . '%')
+                    ->where('name', $indexed[0])
+                    ->whereNull('parent')->first();
 
-            $file = null;
-
-            if (count($front)) {
-                // front
-                $file = File::where('path', 'LIKE', "%" . implode('%', explode('/', $data->group)) . "%")->whereNotNull('file_type')->first();
-            }
-            if (count($mobile)) {
-                // mobile
-                $file = File::find(96);
-            }
-            if (count($front) == 0 && count($mobile) == 0) {
-                // back
-                $file = File::where('path', 'LIKE', "%back%$data->group%")->whereNotNull('file_type')->first();
-            }
-
-            $keys = explode('|', $data->key);
-            $key  = null;
-
-            $fun_create = function ($_d, $d_2) {
-                $id = null;
-                Key::where(
-                    [
-                        'name'        => $_d['name'],
-                        'description' => $_d['description'],
-                    ]
-                )->each(
-                    function (Key $key) use ($_d, &$id) {
-                        if ($key->indexed == $_d['indexed']) {
-                            $id = $key->id;
-                        }
-                    }
-                );
-
-                if ($id) {
-                    return Key::find($id);
-                } else {
-                    return Key::create($d_2);
-                }
-            };
-
-            if (count($keys) > 0) {
-                $_d = [
-                    'name'        => $keys[0],
-                    'description' => $keys[0],
-                    'file_id'     => $file->id,
-                    'indexed'     => [$keys[0]],
-                ];
-
-                $key = $fun_create(
-                    $_d,
-                    $_d
-                );
-
-                if (count($keys) == 1) {
-                    Translate::where('key_id', $key->id)->update(
+                if (!$parent) {
+                    dump('create root key');
+                    $parent = Key::create(
                         [
-                            '0' . $lang_id => $data->value,
+                            'name'        => $indexed[0],
+                            'description' => $indexed[0],
+                            'indexed'     => $indexed,
+                            'parent'      => null,
+                            'file_id'     => $file_id,
+                        ]
+                    );
+                }
+            }
+
+
+            if (count($indexed) == 2) {
+                $parent = Key::where('file_id', $file_id)
+                    ->where('indexed', 'LIKE', '%' . implode('%', [$indexed[0]]) . '%')
+                    ->where('name', $indexed[0])
+                    ->whereNull('parent')
+                    ->first();
+
+                if (!$parent) {
+                    dump('create root key');
+                    $parent = Key::create(
+                        [
+                            'name'        => $indexed[0],
+                            'description' => $indexed[0],
+                            'indexed'     => [$indexed[0]],
+                            'parent'      => null,
+                            'file_id'     => $file_id,
                         ]
                     );
                 }
 
-                if (count($keys) > 1) {
-                    $_d = [
-                        'name'        => $keys[1],
-                        'description' => $keys[1],
-                        'file_id'     => $file->id,
-                        'indexed'     => [$keys[0], $keys[1]],
-                    ];
+                $key = Key::where('file_id', $file_id)
+                    ->where('indexed', 'LIKE', '%' . implode('%', $indexed) . '%')
+                    ->where('name', $indexed[1])
+                    ->where('parent', $parent->id)
+                    ->first();
 
-                    $key = $fun_create(
-                        $_d,
-                        array_replace(
-                            $_d,
-                            [
-                                'parent' => $key->id,
-                            ]
-                        )
+                if (!$key) {
+                    dump('create key');
+                    Key::create(
+                        [
+                            'name'        => $indexed[1],
+                            'description' => $indexed[1],
+                            'indexed'     => $indexed,
+                            'parent'      => $parent->id,
+                            'file_id'     => $file_id,
+                        ]
                     );
-
-                    if (count($keys) == 2) {
-                        Translate::where('key_id', $key->id)->update(
-                            [
-                                '0' . $lang_id => $data->value,
-                            ]
-                        );
-                    }
-
-                    if (count($keys) > 2) {
-                        $_d = [
-                            'name'        => $keys[2],
-                            'description' => $keys[2],
-                            'file_id'     => $file->id,
-                            'indexed'     => [$keys[0], $keys[1], $keys[2]],
-                        ];
-
-                        $key = $fun_create(
-                            $_d,
-                            array_replace(
-                                $_d,
-                                [
-                                    'parent' => $key->id,
-                                ]
-                            )
-                        );
-
-                        if (count($keys) == 3) {
-                            Translate::where('key_id', $key->id)->update(
-                                [
-                                    '0' . $lang_id => $data->value,
-                                ]
-                            );
-                        }
-
-                        if (count($keys) > 3) {
-                            $_d = [
-                                'name'        => $keys[3],
-                                'description' => $keys[3],
-                                'file_id'     => $file->id,
-                                'indexed'     => [$keys[0], $keys[1], $keys[2], $keys[3]],
-                            ];
-
-                            $key = $fun_create(
-                                $_d,
-                                array_replace(
-                                    $_d,
-                                    [
-                                        'parent' => $key->id,
-                                    ]
-                                )
-                            );
-
-                            if (count($keys) == 4) {
-                                Translate::where('key_id', $key->id)->update(
-                                    [
-                                        '0' . $lang_id => $data->value,
-                                    ]
-                                );
-                            }
-
-                            if (count($keys) > 4) {
-                                $_d = [
-                                    'name'        => $keys[4],
-                                    'description' => $keys[4],
-                                    'file_id'     => $file->id,
-                                    'indexed'     => [$keys[0], $keys[1], $keys[2], $keys[3], $keys[4]],
-                                ];
-
-                                $key = $fun_create(
-                                    $_d,
-                                    array_replace(
-                                        $_d,
-                                        [
-                                            'parent' => $key->id,
-                                        ]
-                                    )
-                                );
-
-                                if (count($keys) == 5) {
-                                    Translate::where('key_id', $key->id)->update(
-                                        [
-                                            '0' . $lang_id => $data->value,
-                                        ]
-                                    );
-                                }
-
-                                if (count($keys) > 5) {
-                                    $_d = [
-                                        'name'        => $keys[5],
-                                        'description' => $keys[5],
-                                        'file_id'     => $file->id,
-                                        'indexed'     => [
-                                            $keys[0],
-                                            $keys[1],
-                                            $keys[2],
-                                            $keys[3],
-                                            $keys[4],
-                                            $keys[5],
-                                        ],
-                                    ];
-
-                                    $key = $fun_create(
-                                        $_d,
-                                        array_replace(
-                                            $_d,
-                                            [
-                                                'parent' => $key->id,
-                                            ]
-                                        )
-                                    );
-
-                                    if (count($keys) == 6) {
-                                        Translate::where('key_id', $key->id)->update(
-                                            [
-                                                '0' . $lang_id => $data->value,
-                                            ]
-                                        );
-                                    }
-
-                                    if (count($keys) > 6) {
-                                        dd('gusdfgasdfasdfgjdfsjasdfjjsdfajfkasdjkf');
-                                    }
-                                }
-                            }
-                        }
-                    }
                 }
             }
-            // dump($keys,$key_name);
         }
     );*/
-
-
-
-
-
 
 /* TODO SQL
 Поиск русских букв там где должны быть англ
