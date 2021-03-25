@@ -12,5 +12,5 @@
 Система быстрых переводов.
 
 <h3 align="center">Made with ❤️</h3>
-![alt text](https://memepedia.ru/wp-content/uploads/2017/05/KHhcEzQy3xA-600x338.jpg)
+<img src="https://memepedia.ru/wp-content/uploads/2017/05/KHhcEzQy3xA-600x338.jpg">
 <h3 align="center">&#128073;&#128076;</h3>
