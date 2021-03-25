@@ -12,4 +12,4 @@
 Система быстрых переводов.
 
 <h3 align="center">Made with ❤️</h3>
-<h3 align="center">&#128073;&#128076;</h3>
+<h3 align="center" style="font-size: 40px;">&#128073;&#128076;</h3>
