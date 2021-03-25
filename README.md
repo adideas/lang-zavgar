@@ -11,4 +11,4 @@
 
 Система быстрых переводов.
 
-Made with ❤️
+<h3 align="center">Made with ❤️</h3>
