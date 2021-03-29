@@ -4,6 +4,7 @@ import store from '@/store'
 
 var ws = null
 var buffer = {}
+var ws_auth = false
 
 function pusher() {
   ws = new WebSocket('ws://lang.zavgar.online:6001/app/c6006da2763f3cc10a5f?protocol=7&client=js&version=4.3.1&flash=false')
@@ -44,6 +45,7 @@ function pusher() {
         })
         break
       case 'pusher_internal:subscription_succeeded':
+        ws_auth = true
         setTimeout(() => {
           if (ws) {
             ws.send(JSON.stringify({ event: 'pusher:ping', data: {}}))
@@ -68,6 +70,7 @@ function pusher() {
         }, 4000)
         break
       case 'pusher:error':
+        ws_auth = false
         ws.close()
         ws = undefined
         break
@@ -80,6 +83,7 @@ function pusher() {
   }
 
   ws.onclose = (res) => {
+    ws_auth = false
     ws = undefined
     setTimeout(() => {
       pusher()
@@ -118,7 +122,7 @@ Vue.prototype.$ws = function(event = 'pusher:ping', data = {}) {
     }
 
     const interval_connect = setInterval(() => {
-      if (ws) {
+      if (ws_auth) {
         clearInterval(interval_connect)
         return connect()
       }

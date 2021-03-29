@@ -10,7 +10,7 @@ class TestConnect extends PusherExtends
     public function handle(array $data = null)
     {
         return [
-            'test'
+            'test1'
         ];
     }
 }

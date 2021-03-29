@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="567ce022-64d7-4c9b-bb74-599cf91022ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/lang.zavgar.online.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lang.zavgar.online.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WS/Service/ClientSocketHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WS/Service/ClientSocketHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WS/Events/TestConnect.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WS/Events/TestConnect.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vue-element/src/pusher.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/pusher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/views/error-page/404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/error-page/404.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +209,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617017197227</updated>
-      <workItem from="1617017197566" duration="5047000" />
+      <workItem from="1617017197566" duration="5246000" />
     </task>
     <servers />
   </component>
