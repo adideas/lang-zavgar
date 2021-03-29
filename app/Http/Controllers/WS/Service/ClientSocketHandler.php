@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\WS\Service;
 
 use BeyondCode\LaravelWebSockets\WebSockets\WebSocketHandler;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
@@ -29,13 +30,18 @@ class ClientSocketHandler extends WebSocketHandler
         if (class_exists($namespace)) {
            $class = new $namespace($data, $connection, $message, $context);
            if(method_exists($class, 'handle')) {
-               if ($return = $class->handle($data)) {
-                   $data['data'] = is_array($return) ? $return : [$return];
-                   $connection->send(json_encode($data));
+               $return = $class->handle(count($data) ? $data : null);
+               if(is_null($return)) {
+                   return true;
                }
+               $data['data'] = $return;
+               $connection->send(json_encode($data));
            }
         } else {
-            dump('class ' . $namespace);
+            $data['data'] = 'error';
+            $data['error'] = 1;
+            $connection->send(json_encode($data));
+            dump('not found class ' . $namespace);
         }
     }
 }

@@ -13,5 +13,5 @@ abstract class PusherExtends
 
     }
 
-    abstract public function handle(array $data = null);
+    abstract public function handle(array $message = []);
 }

@@ -1,3 +1,5 @@
+// https://christoph-rumpel.com/2020/11/laravel-real-time-notifications
+
 import Vue from 'vue'
 import { raw } from '@/api/api-laravel'
 import store from '@/store'
@@ -7,7 +9,13 @@ var buffer = {}
 var ws_auth = false
 
 function pusher() {
-  ws = new WebSocket('ws://lang.zavgar.online:6001/app/c6006da2763f3cc10a5f?protocol=7&client=js&version=4.3.1&flash=false')
+  try {
+    ws = new WebSocket('ws://lang.zavgar.online:6001/app/c6006da2763f3cc10a5f?protocol=7&client=js&version=4.3.1&flash=false')
+  } catch (e) {
+    ws = null
+    return false
+  }
+
   var channel = 'private.User.' + store.state.user.id
 
   ws.onmessage = (res) => {
@@ -107,8 +115,11 @@ Vue.prototype.$ws = function(event = 'pusher:ping', data = {}) {
       let interval = setInterval(() => {
         if (buffer[id]) {
           clearInterval(interval)
-          resolve(buffer[id])
           interval = null
+          if (buffer[id].error) {
+            reject(buffer[id])
+          }
+          resolve(buffer[id])
         }
       }, 100)
 
