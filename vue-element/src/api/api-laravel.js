@@ -19,3 +19,7 @@ export function update(url, id, data = {}) {
 export function destroy(url, id, data = {}) {
   return request({ url: url + '/' + id, method: 'delete', data })
 }
+
+export function raw(...p) {
+  return request(...p)
+}

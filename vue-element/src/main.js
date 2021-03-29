@@ -11,6 +11,7 @@ import './styles/element-variables.scss'
 import '@/styles/index.scss'
 import './icons' // icon
 import './permission' // permission control
+import './pusher' // permission control
 
 import './components/HeaderSticky' // Липкий хеадер
 Vue.use(Query)

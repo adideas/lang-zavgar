@@ -19,6 +19,7 @@
         "ext-fileinfo": "*",
         "ext-json": "*",
         "ext-openssl": "*",
+        "beyondcode/laravel-websockets": "^1.11",
         "fideloper/proxy": "^4.2",
         "guzzlehttp/guzzle": "^6.3.1|^7.0",
         "hoyvoy/laravel-cross-database-subqueries": "^8.0",
@@ -26,7 +27,7 @@
         "laravel/horizon": "4.3.5",
         "laravel/passport": "^9.2",
         "laravel/tinker": "^2.0",
-        "pusher/pusher-php-server": "^4.0"
+        "pusher/pusher-php-server": "~3.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.7",
