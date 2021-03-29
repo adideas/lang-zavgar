@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ChangeListManager">
-    <list default="true" id="567ce022-64d7-4c9b-bb74-599cf91022ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/lang.zavgar.online.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lang.zavgar.online.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WS/Service/ClientSocketHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WS/Service/ClientSocketHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/pusher.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/pusher.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/views/error-page/404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/error-page/404.vue" afterDir="false" />
-    </list>
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/react/socket" />
       <path value="$PROJECT_DIR$/vendor/react/event-loop" />
@@ -167,97 +147,10 @@
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1qQgOUw6h4pfUG1faMvfmFRGj8W" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="js.ns.project" value="true" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RunManager">
-    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner scope="XML" />
-      <method v="2" />
-    </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.dev" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="567ce022-64d7-4c9b-bb74-599cf91022ad" name="Default Changelist" comment="" />
-      <created>1617017197227</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1617017197227</updated>
-      <workItem from="1617017197566" duration="5047000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="777" y="302" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1617017831474">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="777" y="302" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617017831474" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617017926925">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617017926925" />
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1617018068661">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617018068661" />
-    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1617018068660">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617018068660" />
-    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1617018068660">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617018068660" />
-    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1617018068661">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617018068661" />
-    <state x="540" y="263" key="IDE.errors.dialog" timestamp="1617017208148">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="540" y="263" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617017208148" />
-    <state x="668" y="227" key="NewPhpClassDialog" timestamp="1617017786245">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="668" y="227" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617017786245" />
-    <state x="668" y="237" width="583" height="566" key="find.popup" timestamp="1617019861514">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="668" y="237" width="583" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617019861514" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617019810380">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617019810380" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/phpunit.xml" custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" use_configuration_file="true" />
+    </phpunit_settings>
   </component>
 </project>

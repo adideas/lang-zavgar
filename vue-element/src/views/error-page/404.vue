@@ -34,11 +34,16 @@ export default {
   },
   methods: {
     back() {
-      if (this.$route.query.noGoBack) {
+      this.$ws('TestConnect', { a: 'b' }).then(res => {
+        console.error(res)
+      }).catch(_ => {
+        console.error('error')
+      })
+      /* if (this.$route.query.noGoBack) {
         this.$router.push({ path: '/dashboard' })
       } else {
         this.$router.go(-1)
-      }
+      }*/
     }
   }
 }
