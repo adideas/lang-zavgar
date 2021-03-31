@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  'globals': {},
   parserOptions: {
     parser: 'babel-eslint',
     sourceType: 'module'
@@ -20,6 +21,9 @@ module.exports = {
         "max": 1,
         "allowFirstLine": false
       }
+    }],
+    "vue/attribute-hyphenation": ["error", "always" | "never", {
+      "ignore": ["onClick"]
     }],
     "vue/singleline-html-element-content-newline": "off",
     "vue/multiline-html-element-content-newline":"off",
