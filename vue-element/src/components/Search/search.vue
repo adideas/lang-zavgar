@@ -112,9 +112,13 @@ export default {
       }
 
       if (entity.entity === 'App\\Models\\Translate') {
-        const string = Object.keys(entity.model).filter(x => Number(x) && x).map(x => entity.model[x]).join(' ')
-        if (string.replace(/\s/gm, '').length) {
-          return string
+        if (Number(entity.language_id) > 0) {
+          return entity.model[entity.language_id]
+        } else {
+          const string = Object.keys(entity.model).filter(x => Number(x) && x).map(x => entity.model[x]).join(' ')
+          if (string.replace(/\s/gm, '').length) {
+            return string
+          }
         }
       }
 

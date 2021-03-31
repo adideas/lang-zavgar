@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="567ce022-64d7-4c9b-bb74-599cf91022ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WS/Events/FileReader.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WS/Events/FileReader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Observers/SearchableObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/SearchableObserver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/components/Search/search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/Search/search.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +231,7 @@
       <option name="presentableId" value="Default" />
       <updated>1617017197227</updated>
       <workItem from="1617017197566" duration="14035000" />
-      <workItem from="1617190832488" duration="21353000" />
+      <workItem from="1617190832488" duration="24965000" />
     </task>
     <servers />
   </component>
@@ -276,13 +279,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="384" y="112" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617216235210" />
-    <state x="2184" y="124" width="583" height="566" key="find.popup" timestamp="1617199056685">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2184" y="124" width="583" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617199056685" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617023653328">
+    <state x="-8" y="-8" width="1413" height="665" maximized="true" key="dock-window-1" timestamp="1617219250432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617023653328" />
+    <state x="-8" y="-8" width="1413" height="665" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617219250432" />
+    <state x="2184" y="124" width="583" height="566" key="find.popup" timestamp="1617217730945">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2184" y="124" width="583" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617217730945" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617219302814">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617219302814" />
   </component>
 </project>

@@ -3,28 +3,29 @@
 namespace App\Observers;
 
 use App\Models\Search;
+use App\Models\Translate;
 use Illuminate\Database\Eloquent\Model;
 
 class SearchableObserver
 {
     public function created(Model $model)
     {
-        $this->setSearch($model, $this->getString($model));
+        $this->setSearch($model);
     }
 
     public function updated(Model $model)
     {
-        $this->setSearch($model, $this->getString($model));
+        $this->setSearch($model);
     }
 
     public function restored(Model $model)
     {
-        $this->setSearch($model, $this->getString($model));
+        $this->setSearch($model);
     }
 
     public function deleting(Model $model)
     {
-        Search::where('entity_id', $model->id)->where('entity', $model->getMorphClass())->delete();
+        // Search::where('entity_id', $model->id)->where('entity', $model->getMorphClass())->delete();
     }
 
     ///////////////
@@ -32,57 +33,72 @@ class SearchableObserver
     ///////////////
     ///////////////
 
-    private function setSearch(Model $model, $string)
+    private function setSearch(Model $model)
     {
-        if (strlen($string) > 3) {
-            Search::updateOrCreate(
-                [
-                    'entity'    => $model->getMorphClass(),
-                    'entity_id' => $model->id,
-                ],
-                [
-                    'searchable' => $string
-                ]
-            );
-        }
-    }
-
-    private function getString(Model $model) : string
-    {
-        $string = ' ';
-
-        foreach ($model->getAttributes() as $key => $value) {
-            if (gettype($value) == 'string' && strtotime($value) < 1500000000) {
-                $string .= $this->convertString($value) . ' ';
-            }
-        }
-
-        if (isset($model->searchable)) {
-            foreach ($model->searchable as $relation => $params) {
-                try {
-                    $params = explode('.', $params);
-                    if (count($params) == 2) {
-                        $data =
-                            $model->{$params[0]}()->select(['id', ...explode(',', $params[1])])->get()->toArray()[0];
-                        foreach ($data as $key => $value) {
-                            try {
-                                if (gettype($value) == 'string' && strtotime($value) < 1500000000) {
-                                    $string .= $this->convertString($value) . ' ';
-                                }
-                            } catch (\Exception $e) {
-                            }
-                        }
+        try {
+            if (get_class($model) == Translate::class) {
+                $translate = json_decode(json_encode($model), true);
+                $keys      = array_values(array_filter(array_keys($translate), fn($x) => intval($x) > 0));
+                foreach ($keys as $_ => $key) {
+                    $_data = [
+                        'entity' => $model->getMorphClass(),
+                        'entity_id' => $model->id,
+                        'language_id' => $key
+                    ];
+                    $data = [
+                        'searchable' => $this->convertString($model->{$key}),
+                        'entity' => $model->getMorphClass(),
+                        'entity_id' => $model->id,
+                        'language_id' => $key
+                    ];
+                    if (str_replace(' ', '', $model->{$key})) {
+                        Search::updateOrCreate($_data, $data);
                     }
-                } catch (\Exception $e) {
+                }
+            } else {
+                $_data = [
+                    'entity' => $model->getMorphClass(),
+                    'entity_id' => $model->id,
+                    'language_id' => 'name'
+                ];
+                $data = [
+                    'searchable' => $this->convertString($model->name),
+                    'entity' => $model->getMorphClass(),
+                    'entity_id' => $model->id,
+                    'language_id' => 'name'
+                ];
+                if (str_replace(' ', '', $model->name)) {
+                    Search::updateOrCreate($_data, $data);
+                }
+
+                $_data = [
+                    'entity' => $model->getMorphClass(),
+                    'entity_id' => $model->id,
+                    'language_id' => 'description'
+                ];
+                $data = [
+                    'searchable' => $this->convertString($model->description),
+                    'entity' => $model->getMorphClass(),
+                    'entity_id' => $model->id,
+                    'language_id' => 'description'
+                ];
+                if (str_replace(' ', '', $model->description)) {
+                    Search::updateOrCreate($_data, $data);
                 }
             }
+        } catch (\Exception $e) {
+            dd($e->getMessage());
         }
 
-        return $string;
     }
 
     private function convertString($string)
     {
-        return strval(preg_replace("/[^\w\x7F-\xFF\s]/", " ", strval($string)) . " ");
+        $string = strval($string);
+        $string = mb_strtolower($string);
+        $string = preg_replace("/[^\w\x7F-\xFF\s]/", " ", $string);
+        $string .= " ";
+
+        return $string;
     }
 }
