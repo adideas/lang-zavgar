@@ -62,7 +62,8 @@ class TranslateController extends Controller
 
         $translate->update(
             [
-                '0' . $request->input('language_id') => $value ,
+                '0' . $request->input('language_id') => $value,
+                'user_id' => auth()->user()->id,
             ]
         );
 

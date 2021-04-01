@@ -2,11 +2,13 @@
 
 namespace App\Console\Commands;
 
+use App\classes\DiffText\DiffText;
 use App\classes\GitInject\GitInject;
 use App\Models\Access;
 use App\Models\File;
 use App\Models\GitCommand;
 use App\Models\Helpers\FileTrait;
+use App\Models\HistoryTranslate;
 use App\Models\Key;
 use App\Models\Language;
 use App\Models\Search;

@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="567ce022-64d7-4c9b-bb74-599cf91022ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/CreateKeys.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/CreateKeys.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/mixins/rusToLatin.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/mixins/rusToLatin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Dump.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Dump.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Translate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Translate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +195,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\lang.zavgar.online\app\classes\DiffText" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\OSPanel\domains\lang.zavgar.online\vue-element\src\components\FileReader" />
       <recent name="C:\OSPanel\domains\lang.zavgar.online\app\Http\Controllers\WS\Events" />
@@ -231,7 +235,8 @@
       <option name="presentableId" value="Default" />
       <updated>1617017197227</updated>
       <workItem from="1617017197566" duration="14035000" />
-      <workItem from="1617190832488" duration="32254000" />
+      <workItem from="1617190832488" duration="44539000" />
+      <workItem from="1617293182525" duration="3251000" />
     </task>
     <servers />
   </component>
@@ -247,10 +252,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="302" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617017831474" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617017926925">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617296351848">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617017926925" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617295698072" />
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617296351848" />
+    <state x="2669" y="373" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#0" timestamp="1617287302676">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2669" y="373" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#0/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617287302676" />
     <state width="1876" height="275" key="GridCell.Tab.0.bottom" timestamp="1617278451067">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -271,14 +281,20 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="263" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617017208148" />
-    <state x="668" y="227" key="NewPhpClassDialog" timestamp="1617017786245">
+    <state x="2588" y="227" key="NewPhpClassDialog" timestamp="1617292881340">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="668" y="227" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617287191648" />
+    <state x="2588" y="227" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617292881340" />
+    <state x="794" y="439" key="NewPhpFileDialog" timestamp="1617294772001">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="668" y="227" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617017786245" />
-    <state x="384" y="112" key="RollbackChangesDialog" timestamp="1617216235210">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617294772001" />
+    <state x="2304" y="112" key="RollbackChangesDialog" timestamp="1617289701216">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="384" y="112" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617216235210" />
+    <state x="2304" y="112" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617289701216" />
     <state x="-8" y="-8" width="1413" height="665" maximized="true" key="dock-window-1" timestamp="1617219250432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -287,9 +303,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2184" y="124" width="583" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617217730945" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617219302814">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617279079881">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617219302814" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617279079881" />
   </component>
 </project>
