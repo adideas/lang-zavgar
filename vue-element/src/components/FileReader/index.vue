@@ -201,7 +201,21 @@ export default {
         this.loading = false
       })
     },
-    updateTranslate(translate) {
+    updateTranslate(translate, bool_alert = true) {
+      if (!bool_alert) {
+        this.loading = true
+        update('translate', translate.translate_id, {
+          id: translate.translate_id,
+          language_id: translate.id,
+          value: translate.translate
+        }).then(_ => {
+          this.updateCapture()
+          this.$message.success('Сохранено')
+        }).catch(_ => {
+          this.updateCapture()
+        })
+        return 0
+      }
       this.$alert('Обновить ключ?', 'Внимание', {
         showCancelButton: true,
         confirmButtonText: 'Обновить',
@@ -265,7 +279,14 @@ export default {
               closeOnClickModal: false,
               message: this.$createElement(CreateKeys, { props: { typeAdd: 3, hook: Math.random(), callback: (e) => {
                 this.loading = true
-                store('file', { method: 'makeKey', data: e, parent, file_id }).then(res => { this.updateCapture() }).finally(() => { this.loading = false })
+                store('file', { method: 'makeKey', data: e, parent, file_id }).then(res => {
+                  this.updateTranslate({
+                    translate_id: res.data.translate.id,
+                    id: 1,
+                    translate: e.value
+                  }, false)
+                  this.updateCapture()
+                }).finally(() => { this.loading = false })
               } }})
             })
           } })

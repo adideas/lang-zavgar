@@ -50,6 +50,7 @@ export default {
     hook() {
       this.el.name = ''
       this.el.description = ''
+      this.el.value = ''
       this.el.is_end = false
     },
     typeAdd() {
