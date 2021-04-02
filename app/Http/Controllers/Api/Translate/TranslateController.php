@@ -28,8 +28,10 @@ class TranslateController extends Controller
 
     public function index(Request $request, TranslateFilter $translateFilter)
     {
+        // создаем запрос
         $translate = Translate::filter($translateFilter);
 
+        // доп фильтр для поиска
         $filter = json_decode($request->input('filter'), true);
         if($filter['model_id']) {
             $model = Search::find($filter['model_id']);
@@ -48,10 +50,8 @@ class TranslateController extends Controller
             $translate = Translate::filter($translateFilter);
         }
 
-
-
-        // return TranslateResource::collection($translate->with('key:id,name,description')->paginate(2));
-        return TranslateResource::collection($translate->with('key:id,name,description')->paginate($request->to ?: 10));
+        // вернем коллекцию
+        return TranslateResource::collection($translate->with('key:id,name,description')->paginate($request->to ?: 5));
     }
 
     public function update(TranslateRequest $request, Translate $translate)

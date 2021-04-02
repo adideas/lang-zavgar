@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Filters\Filterable;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
@@ -11,6 +12,7 @@ use Illuminate\Database\Eloquent\Builder;
  */
 class HistoryTranslate extends Model
 {
+    use Filterable;
     protected $fillable = [
         'user_id',
         'language_id',

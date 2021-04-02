@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="567ce022-64d7-4c9b-bb74-599cf91022ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Filters/Filter/HistoryTranslateFilter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Dump.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Dump.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/HistoryTranslateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/HistoryTranslateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/HistoryTranslate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HistoryTranslate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/HistoryTranslateObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/HistoryTranslateObserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/classes/DiffText/DiffText.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/DiffText/DiffText.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/views/history_translate/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/history_translate/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,6 +240,7 @@
       <workItem from="1617017197566" duration="14035000" />
       <workItem from="1617190832488" duration="44539000" />
       <workItem from="1617293182525" duration="13292000" />
+      <workItem from="1617340854488" duration="2411000" />
     </task>
     <servers />
   </component>
@@ -255,44 +256,44 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="302" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617017831474" />
-    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617296351848">
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617342147508">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617295698072" />
-    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617296351848" />
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617342147508" />
     <state x="2669" y="373" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#0" timestamp="1617287302676">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2669" y="373" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#0/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617287302676" />
-    <state width="1876" height="275" key="GridCell.Tab.0.bottom" timestamp="1617296727045">
+    <state width="1876" height="275" key="GridCell.Tab.0.bottom" timestamp="1617340925010">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617278451067" />
-    <state width="1876" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617296727045" />
-    <state width="1876" height="275" key="GridCell.Tab.0.center" timestamp="1617296727044">
+    <state width="1876" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617340925010" />
+    <state width="1876" height="275" key="GridCell.Tab.0.center" timestamp="1617340925010">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617278451066" />
-    <state width="1876" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617296727044" />
-    <state width="1876" height="275" key="GridCell.Tab.0.left" timestamp="1617296727044">
+    <state width="1876" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617340925010" />
+    <state width="1876" height="275" key="GridCell.Tab.0.left" timestamp="1617340925009">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617278451066" />
-    <state width="1876" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617296727044" />
-    <state width="1876" height="275" key="GridCell.Tab.0.right" timestamp="1617296727045">
+    <state width="1876" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617340925009" />
+    <state width="1876" height="275" key="GridCell.Tab.0.right" timestamp="1617340925010">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617278451066" />
-    <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617296727045" />
+    <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617340925010" />
     <state x="540" y="263" key="IDE.errors.dialog" timestamp="1617017208148">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="263" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617017208148" />
-    <state x="2588" y="227" key="NewPhpClassDialog" timestamp="1617292881340">
+    <state x="2588" y="227" key="NewPhpClassDialog" timestamp="1617342133629">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="668" y="227" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617287191648" />
-    <state x="2588" y="227" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617292881340" />
+    <state x="2588" y="227" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617342133629" />
     <state x="794" y="439" key="NewPhpFileDialog" timestamp="1617294772001">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

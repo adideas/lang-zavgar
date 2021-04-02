@@ -130,7 +130,7 @@
         layout="total, sizes, prev, pager, next"
         :current-page.sync="translations.meta.current_page"
         :total="translations.meta.total"
-        :page-sizes="[10, 20, 40]"
+        :page-sizes="[5, 10, 20, 40]"
         @size-change="(e) => {query_back.to = e;getTranslate()}"
         @current-change="(e) => {query_back.page = e; getTranslate()}"
       />
@@ -149,7 +149,7 @@ export default {
   data() {
     return {
       query_back: {
-        to: 10,
+        to: 5,
         page: 1
       },
       filter: { select: '', language: [], model_id: 0 },
