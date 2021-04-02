@@ -11,6 +11,17 @@ class DiffText
 
     public static function text($from_text, $to_text)
     {
+        $from_text = $from_text ? $from_text : '';
+        $to_text = $to_text ? $to_text : '';
+        if ($from_text == '' && mb_strlen($to_text)) {
+            return [
+                'count_symbol_with_space' => mb_strlen($to_text),
+                'count_symbol_without_space' => mb_strlen(str_replace(' ', '', $to_text)),
+                'count_new_symbol_with_space' => mb_strlen($to_text),
+                'count_new_symbol_without_space' => mb_strlen(str_replace(' ', '', $to_text)),
+                'html' => "<ins>$to_text</ins>"
+            ];
+        }
         // Он генерирует два массива:
         //
         // values array: список элементов в том виде, в котором они появляются в diff.

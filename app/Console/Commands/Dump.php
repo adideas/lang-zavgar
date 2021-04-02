@@ -37,6 +37,7 @@ class Dump extends Command
     public function handle()
     {
        //
+        dd(HistoryTranslate::distinct('date')->get());
     }
 }
 

@@ -16,25 +16,8 @@ class HistoryTranslateObserver
         $original = array_slice_key($model->getOriginal(), $keys);
         $modified = array_slice_key($model->getAttributes(), $keys);
 
-        function without_symbol($str)
-        {
-            $str = str_replace(' ', '', $str);
-
-            return $str;
-        }
-
-        foreach (array_keys(array_diff($original, $modified)) as $_ => $key) {
-            $new            = $modified[$key];
-            $symbol_replace = [',', '.', '-', '_', '(', ')', '!', '?'];
-            $data           = explode(' ', str_replace($symbol_replace, ' ', $original[$key]));
-
-            foreach ($data as $__ => $rem) {
-                foreach (mb_str_split($rem, 2) as $index => $rem_) {
-                    $new = str_replace(isset($rem[$index + 1]) ? $rem[$index] . $rem[$index + 1] : $rem[$index], '', $new);
-                }
-            }
-
-            HistoryTranslate::create(
+        foreach (array_keys(array_replace(array_diff($original, $modified), array_diff($modified, $original))) as $_ => $key) {
+            dd(HistoryTranslate::create(
                 array_replace([
                     'user_id'                        => $model->user_id,
                     'language_id'                    => intval($key),
@@ -44,7 +27,7 @@ class HistoryTranslateObserver
                     'new'                            => $modified[$key],
                     'date'                           => now()
                 ],DiffText::text($original[$key], $modified[$key]))
-            );
+            ));
         }
     }
 }

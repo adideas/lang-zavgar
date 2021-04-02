@@ -7,9 +7,11 @@
     <list default="true" id="567ce022-64d7-4c9b-bb74-599cf91022ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/Dump.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Dump.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Translate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Translate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/HistoryTranslate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HistoryTranslate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Observers/HistoryTranslateObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/HistoryTranslateObserver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/DiffText/DiffText.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/DiffText/DiffText.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -236,7 +239,7 @@
       <updated>1617017197227</updated>
       <workItem from="1617017197566" duration="14035000" />
       <workItem from="1617190832488" duration="44539000" />
-      <workItem from="1617293182525" duration="3251000" />
+      <workItem from="1617293182525" duration="13292000" />
     </task>
     <servers />
   </component>
@@ -261,22 +264,26 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2669" y="373" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#0/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617287302676" />
-    <state width="1876" height="275" key="GridCell.Tab.0.bottom" timestamp="1617278451067">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1876" height="275" key="GridCell.Tab.0.bottom" timestamp="1617296727045">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617278451067" />
-    <state width="1876" height="275" key="GridCell.Tab.0.center" timestamp="1617278451066">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1876" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617296727045" />
+    <state width="1876" height="275" key="GridCell.Tab.0.center" timestamp="1617296727044">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617278451066" />
-    <state width="1876" height="275" key="GridCell.Tab.0.left" timestamp="1617278451066">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1876" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617296727044" />
+    <state width="1876" height="275" key="GridCell.Tab.0.left" timestamp="1617296727044">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617278451066" />
-    <state width="1876" height="275" key="GridCell.Tab.0.right" timestamp="1617278451066">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1876" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617296727044" />
+    <state width="1876" height="275" key="GridCell.Tab.0.right" timestamp="1617296727045">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617278451066" />
+    <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617296727045" />
     <state x="540" y="263" key="IDE.errors.dialog" timestamp="1617017208148">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -303,9 +310,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2184" y="124" width="583" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617217730945" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617279079881">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617311422499">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617279079881" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617311422499" />
   </component>
 </project>

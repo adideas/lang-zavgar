@@ -5,6 +5,7 @@ import constant_routes from '@/router/constant/constantRoutes'
 import dashboard from '@/router/menu/dashboard'
 import user from '@/router/menu/user'
 import translate from '@/router/menu/translate'
+import history_translate from '@/router/menu/history_translate'
 import files from '@/router/menu/files'
 import language from '@/router/menu/language'
 
@@ -18,6 +19,7 @@ export const constantRoutes = [...constant_routes, {
     ...dashboard,
     user,
     translate,
+    history_translate,
     files,
     language,
     { name: '*', path: '*', redirect: '/404', hidden: true }

@@ -2,8 +2,13 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
+/**
+ * @method static distinct(array ...$select) : Builder
+ */
 class HistoryTranslate extends Model
 {
     protected $fillable = [
@@ -18,6 +23,19 @@ class HistoryTranslate extends Model
         'count_new_symbol_with_space',
         'count_new_symbol_without_space',
         'date',
-        'html'
+        'html',
     ];
+
+    public function scopeDistinct(Builder $builder, ...$select) : Builder
+    {
+        if (count($select) == 1 && isset($select[0]) && is_array($select[0])) {
+            $select = $select[0];
+        }
+
+        return $builder->selectRaw("DISTINCT " . '`' . implode('`,`', $select) . '`');
+    }
+
+    public function user() {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }
