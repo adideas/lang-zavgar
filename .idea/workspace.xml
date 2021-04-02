@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="567ce022-64d7-4c9b-bb74-599cf91022ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Filters/Filter/HistoryTranslateFilter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/HistoryTranslateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/HistoryTranslateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/HistoryTranslate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/HistoryTranslate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/views/history_translate/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/history_translate/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/translate/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_01_120446_create_history_translates_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_01_120446_create_history_translates_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/pusher.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/pusher.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +186,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.ns.project" value="true" />
     <property name="js.ns.project.flavor" value="JavaScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue-element/src/components/FileReader" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lang-zavgar-back" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -240,7 +236,7 @@
       <workItem from="1617017197566" duration="14035000" />
       <workItem from="1617190832488" duration="44539000" />
       <workItem from="1617293182525" duration="13292000" />
-      <workItem from="1617340854488" duration="2411000" />
+      <workItem from="1617340854488" duration="9953000" />
     </task>
     <servers />
   </component>
@@ -265,6 +261,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2669" y="373" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#0/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617287302676" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1617386478319">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617386478319" />
     <state width="1876" height="275" key="GridCell.Tab.0.bottom" timestamp="1617340925010">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -298,10 +298,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="439" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617294772001" />
-    <state x="2304" y="112" key="RollbackChangesDialog" timestamp="1617289701216">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="384" y="112" key="RollbackChangesDialog" timestamp="1617372753875">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="384" y="112" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617216235210" />
+    <state x="384" y="112" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617372753875" />
     <state x="2304" y="112" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617289701216" />
     <state x="-8" y="-8" width="1413" height="665" maximized="true" key="dock-window-1" timestamp="1617219250432">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -311,10 +311,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2184" y="124" width="583" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617217730945" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617311422499">
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617369287167">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617279079881" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617311422499" />
+    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617369287167" />
   </component>
 </project>

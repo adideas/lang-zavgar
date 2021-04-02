@@ -10,7 +10,9 @@ var ws_auth = false
 
 function pusher() {
   try {
-    ws = new WebSocket('ws://lang.zavgar.online:6001/app/c6006da2763f3cc10a5f?protocol=7&client=js&version=4.3.1&flash=false')
+    ws = new WebSocket(
+      `${location.protocol === 'https:' ? 'wss' : 'ws'}://lang.zavgar.online${location.protocol === 'https:' ? '' : ':6001'}/app/c6006da2763f3cc10a5f?protocol=7&client=js&version=4.3.1&flash=false`
+    )
   } catch (e) {
     ws = null
     return false
@@ -33,7 +35,7 @@ function pusher() {
       case 'pusher:connection_established':
 
         raw({
-          url: 'http://lang.zavgar.online/api/websocket/auth',
+          url: location.protocol === 'https:' ? 'https://lang.zavgar.online/api/websocket/auth' : 'http://lang.zavgar.online/api/websocket/auth',
           method: 'post',
           data: { socket_id: (data.data.socket_id), channel_name: channel },
           headers: {

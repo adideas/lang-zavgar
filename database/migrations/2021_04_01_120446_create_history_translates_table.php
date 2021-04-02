@@ -23,8 +23,8 @@ class CreateHistoryTranslatesTable extends Migration
             $table->string('new')->comment('После перевода')->nullable();
             $table->integer('count_symbol_with_space')->comment('Количество символов с пробелом')->nullable();
             $table->integer('count_symbol_without_space')->comment('Количество символов без пробелов и знаками препинания')->nullable();
-            $table->integer('count_symbol_with_space')->comment('Количество новых символов с пробелом')->nullable();
-            $table->integer('count_symbol_without_space')->comment('Количество новых символов без пробелов и знаками препинания')->nullable();
+            $table->integer('count_new_symbol_with_space')->comment('Количество новых символов с пробелом')->nullable();
+            $table->integer('count_new_symbol_without_space')->comment('Количество новых символов без пробелов и знаками препинания')->nullable();
             $table->date('date')->comment('Дата когда делал')->nullable();
             $table->text('html')->comment('Изменения')->nullable();
             $table->timestamps();
