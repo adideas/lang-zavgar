@@ -94,7 +94,7 @@
 </template>
 
 <script>
-import { store, update } from '@/api/api-laravel'
+import { destroy, store, update } from '@/api/api-laravel'
 import CreateFileOrFolder from '@/components/FileReader/CreateFileOrFolder'
 import PropertiesFolderAndFile from '@/components/FileReader/PropertiesFolderAndFile'
 import CreateKeys from '@/components/FileReader/CreateKeys'
@@ -316,6 +316,22 @@ export default {
       this.context_menu.visible = true
 
       this.context_menu.$el.push({ name: 'Свойства', click: () => { this.updateProperty(file) } })
+      this.context_menu.$el.push({ name: 'Свойства', click: () => {
+        this.$alert('Удалить файл?', 'Внимание', {
+          confirmButtonText: 'Да удалить!',
+          cancelButtonText: 'Отменить',
+          showCancelButton: true
+        }).then(res => {
+          this.loading = true
+          destroy('file', file.id, {
+            method: file.indexed ? 'deleteKey' : 'deleteFile'
+          }).then(res => {
+            this.updateCapture()
+          }).finally(_ => {
+            this.loading = false
+          })
+        })
+      } })
     },
     selectFile(file = {}) {
       if (file.id) {
