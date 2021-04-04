@@ -316,7 +316,7 @@ export default {
       this.context_menu.visible = true
 
       this.context_menu.$el.push({ name: 'Свойства', click: () => { this.updateProperty(file) } })
-      this.context_menu.$el.push({ name: 'Свойства', click: () => {
+      this.context_menu.$el.push({ name: 'Удалить файл', click: () => {
         this.$alert('Удалить файл?', 'Внимание', {
           confirmButtonText: 'Да удалить!',
           cancelButtonText: 'Отменить',
