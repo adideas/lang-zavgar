@@ -113,10 +113,10 @@ class SearchableObserver
 
                 $text = '';
                 if(get_class($model) == Key::class) {
-                    $text = $model->file->name . "." . implode('.', is_array($model->indexed) ? $model->indexed : json_decode($model->indexed, true));
+                    $text = $model->name . " ( ". $model->file->name . "." . implode('.', is_array($model->indexed) ? $model->indexed : json_decode($model->indexed, true)) . " )";
                 }
                 if(get_class($model) == File::class) {
-                    $text = $model->path;
+                    $text = $model->name . " " . $model->path;
                 }
 
                 $data = [
