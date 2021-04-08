@@ -43,7 +43,7 @@ class TranslateController extends Controller
                     $translate = Translate::whereIn('file_id', recursive_get_id($files));
                 } elseif ($model->entity === Key::class) {
                     $keys = KeyAndChildOnlyId::find($model->model->id);
-                    $translate = Translate::whereIn('file_id', recursive_get_id($keys));
+                    $translate = Translate::whereIn('key_id', recursive_get_id($keys));
                 }
             }
         } else {
