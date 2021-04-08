@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="194.67.112.215" id="3d59d94c-a8b3-48ba-a38e-e394468c4c9c" keyPath="C:\Ключевка\private.ppk" port="22" nameFormat="DESCRIPTIVE" username="forge" />
+    </configs>
+  </component>
+</project>

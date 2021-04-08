@@ -2,6 +2,8 @@
 
 namespace App\Observers;
 
+use App\Models\File;
+use App\Models\Key;
 use App\Models\Search;
 use App\Models\Translate;
 use Illuminate\Database\Eloquent\Model;
@@ -25,7 +27,13 @@ class SearchableObserver
 
     public function deleting(Model $model)
     {
-        // Search::where('entity_id', $model->id)->where('entity', $model->getMorphClass())->delete();
+        if (get_class($model) == Translate::class) {
+            // TODO пока что в разработке
+        } else {
+            Search::where('entity_id', $model->id)
+                ->where('entity', $model->getMorphClass())
+                ->delete();
+        }
     }
 
     ///////////////
@@ -56,6 +64,17 @@ class SearchableObserver
                     }
                 }
             } else {
+                if (get_class($model) == Key::class) {
+                   if(count($model->keys)) {
+                       return;
+                   }
+                }
+                if (get_class($model) == File::class) {
+                    if(count($model->children)) {
+                        return;
+                    }
+                }
+
                 $_data = [
                     'entity' => $model->getMorphClass(),
                     'entity_id' => $model->id,
@@ -83,6 +102,30 @@ class SearchableObserver
                     'language_id' => 'description'
                 ];
                 if (str_replace(' ', '', $model->description)) {
+                    Search::updateOrCreate($_data, $data);
+                }
+
+                $_data = [
+                    'entity' => $model->getMorphClass(),
+                    'entity_id' => $model->id,
+                    'language_id' => 'path'
+                ];
+
+                $text = '';
+                if(get_class($model) == Key::class) {
+                    $text = $model->file->name . "." . implode('.', is_array($model->indexed) ? $model->indexed : json_decode($model->indexed, true));
+                }
+                if(get_class($model) == File::class) {
+                    $text = $model->path;
+                }
+
+                $data = [
+                    'searchable' => $text,
+                    'entity' => $model->getMorphClass(),
+                    'entity_id' => $model->id,
+                    'language_id' => 'path'
+                ];
+                if (str_replace(' ', '', $text)) {
                     Search::updateOrCreate($_data, $data);
                 }
             }

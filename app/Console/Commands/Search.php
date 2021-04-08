@@ -42,7 +42,8 @@ class Search extends Command
      */
     public function handle()
     {
-        DB::unprepared("TRUNCATE `searches`;");
+        \App\Models\Search::truncate();
+        // DB::unprepared("TRUNCATE `searches`;");
 
         $observer = new SearchableObserver();
 
@@ -52,13 +53,13 @@ class Search extends Command
             }
         );
 
-        File::each(
+        File::with('children')->doesntHave('children')->each(
             function (File $file) use ($observer) {
                 $observer->updated($file);
             }
         );
 
-        Key::each(
+        Key::with('keys')->doesntHave('keys')->each(
             function (Key $file) use ($observer) {
                 $observer->updated($file);
             }

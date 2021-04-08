@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="567ce022-64d7-4c9b-bb74-599cf91022ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/Search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Filters/Filter/TranslateFilter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Filters/Filter/TranslateFilter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Observers/SearchableObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/SearchableObserver.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +185,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="js.ns.project" value="true" />
     <property name="js.ns.project.flavor" value="JavaScript" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../lang-zavgar-back" />
@@ -190,6 +198,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -237,7 +246,8 @@
       <workItem from="1617293182525" duration="13292000" />
       <workItem from="1617340854488" duration="10098000" />
       <workItem from="1617479892797" duration="268000" />
-      <workItem from="1617537196458" duration="127000" />
+      <workItem from="1617537196458" duration="3342000" />
+      <workItem from="1617879675109" duration="4099000" />
     </task>
     <servers />
   </component>
@@ -249,43 +259,51 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="586" y="198" key="#Inspections/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617199258675" />
+    <state x="536" y="165" key="#SSH_Configurations" timestamp="1617880030169">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="536" y="165" key="#SSH_Configurations/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617880030169" />
     <state x="777" y="302" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1617017831474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="302" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617017831474" />
-    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617342147508">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="697" y="197" key="#com.intellij.tools.ToolEditorDialog" timestamp="1617879744836">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617295698072" />
+    <state x="697" y="197" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617879744836" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617886993119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617886993119" />
     <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617342147508" />
     <state x="2669" y="373" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#0" timestamp="1617287302676">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2669" y="373" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#0/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617287302676" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1617386478319">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1617880004056">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617386478319" />
-    <state width="1876" height="275" key="GridCell.Tab.0.bottom" timestamp="1617537276849">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617880004056" />
+    <state width="1876" height="275" key="GridCell.Tab.0.bottom" timestamp="1617689021323">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617537276849" />
-    <state width="1876" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617388306595" />
-    <state width="1876" height="275" key="GridCell.Tab.0.center" timestamp="1617537276848">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1876" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617689021323" />
+    <state width="1876" height="275" key="GridCell.Tab.0.center" timestamp="1617689021323">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617537276848" />
-    <state width="1876" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617388306595" />
-    <state width="1876" height="275" key="GridCell.Tab.0.left" timestamp="1617537276848">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1876" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617689021323" />
+    <state width="1876" height="275" key="GridCell.Tab.0.left" timestamp="1617689021322">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617537276848" />
-    <state width="1876" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617388306594" />
-    <state width="1876" height="275" key="GridCell.Tab.0.right" timestamp="1617537276849">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1876" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617689021322" />
+    <state width="1876" height="275" key="GridCell.Tab.0.right" timestamp="1617689021323">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617537276849" />
-    <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617388306595" />
+    <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617689021323" />
     <state x="540" y="263" key="IDE.errors.dialog" timestamp="1617017208148">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -304,6 +322,10 @@
     </state>
     <state x="384" y="112" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617372753875" />
     <state x="2304" y="112" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617289701216" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1617880065262">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617880065262" />
     <state x="-8" y="-8" width="1413" height="665" maximized="true" key="dock-window-1" timestamp="1617219250432">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

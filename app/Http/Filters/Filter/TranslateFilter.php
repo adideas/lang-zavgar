@@ -4,6 +4,7 @@ namespace App\Http\Filters\Filter;
 
 use App\Http\Filters\QueryFilter;
 use App\Models\Language;
+use Illuminate\Database\Eloquent\Builder;
 
 class TranslateFilter extends QueryFilter
 {
@@ -14,29 +15,24 @@ class TranslateFilter extends QueryFilter
 
     public function filter(array $filter)
     {
-        if (isset($filter['select']) && $filter['select']) {
-            switch ($filter['select']) {
-                case 'is_not_translate':
+        $this->builder->where(
+            function (Builder $builder) use ($filter) {
+                if (isset($filter['select'])) {
                     Language::when(
                         isset($filter['language']) && count($filter['language']) > 0,
                         fn($builder) => $builder->whereIn('id', $filter['language'])
-                    )->pluck('id')
-                        ->map(fn($x) => '0' . $x)
-                        ->each(fn($lang) => $this->builder->orWhereNull($lang));
-                    break;
-                case 'is_translate':
-
-                    Language::when(
-                        isset($filter['language']) && count($filter['language']) > 0,
-                        fn($builder) => $builder->whereIn('id', $filter['language'])
-                    )->pluck('id')
-                        ->map(fn($x) => '0' . $x)
-                        ->each(fn($lang) => $this->builder->whereNotNull($lang));
-
-                    break;
-                default:
-                    break;
+                    )->each(
+                        function (Language $language) use (&$builder, $filter) {
+                            if($filter['select'] == 'is_not_translate') {
+                                $builder->orWhereNull('0' . $language->id);
+                            }
+                            if($filter['select'] == 'is_translate') {
+                                $builder->whereNotNull('0' . $language->id);
+                            }
+                        }
+                    );
+                }
             }
-        }
+        );
     }
 }

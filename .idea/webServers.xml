@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b0bd8085-d951-405c-8bd6-288c9e2221f5" name="lang" url="http://194.67.112.215">
+        <fileTransfer rootFolder="/home/forge/lang.zavgar.online" accessType="SFTP" host="194.67.112.215" port="22" sshConfigId="3d59d94c-a8b3-48ba-a38e-e394468c4c9c" sshConfig="forge@194.67.112.215:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

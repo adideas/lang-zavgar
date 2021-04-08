@@ -33,6 +33,9 @@ class Search extends Model
                 ->orWhereRaw("searchable LIKE '%$search%'");
         }
 
+        // trait.PartController.store.add
+        $search = str_replace('.',' ', $search);
+
         $search = "+*$search*";
 
         return self::selectRaw("id, entity_id, entity, searchable, language_id")
