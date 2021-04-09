@@ -61,7 +61,7 @@
               <el-table-column prop="description" width="200" />
               <el-table-column>
                 <template slot-scope="row">
-                  <el-input v-model="row.row.translate" :disabled="row.$index > 0" clearable @change="updateTranslate(row.row)" />
+                  <el-input v-model="row.row.translate" clearable @change="updateTranslate(row.row)" />
                 </template>
               </el-table-column>
             </el-table>

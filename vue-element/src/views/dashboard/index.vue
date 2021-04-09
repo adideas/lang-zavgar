@@ -35,7 +35,8 @@
             <span>
               {{ index + ` (${el.branches.join(', ')})` }}
             </span>
-            <el-button size="mini" type="success" style="float: right;" @click="uploadToGithub(index)">push master</el-button>
+            <el-button size="mini" type="info" style="float: right;" @click="uploadToGithubDev(index)">push develop</el-button>
+            <el-button size="mini" type="danger" style="float: right;" @click="uploadToGithub(index)">push master</el-button>
           </template>
           <!-- ---------------------------------- -->
           <el-card header="Последняя фиксация">
@@ -109,7 +110,7 @@ export default {
           showCancelButton: true,
           cancelButtonText: 'Отменить'
         }).then(res => {
-          store('translate', { repo: index }).then(res => {
+          store('translate', { repo: index, type: 'master' }).then(res => {
             this.dialog_upload_git = true
             const interval = setInterval(() => {
               this.percentage += 2
@@ -120,6 +121,26 @@ export default {
               }
             }, 200)
           })
+        })
+      }
+    },
+    uploadToGithubDev(index) {
+      if (this.$store.getters.access.root) {
+        this.$alert('Отправить код на github (develop ветку) ?', 'Внимание', {
+          confirmButtonText: 'Отправить',
+          showCancelButton: true,
+          cancelButtonText: 'Отменить'
+        }).then(res => {
+          this.dialog_upload_git = true
+          const interval = setInterval(() => {
+            this.percentage += 2
+            if (this.percentage >= 100) {
+              this.percentage = 0
+              this.dialog_upload_git = false
+              clearInterval(interval)
+            }
+          }, 200)
+          store('translate', { repo: index, type: 'develop' }).then(res => {})
         })
       }
     },

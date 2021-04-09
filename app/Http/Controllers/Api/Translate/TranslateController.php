@@ -73,8 +73,19 @@ class TranslateController extends Controller
     }
 
     public function store(Request $request) {
-        $this->authorize('create', Translate::class);
-        GitJob::dispatch('gitMasterPush', $request->input('repo', ''))->delay(now()->addSecond(1));
+        if ($request->input('type', '') == 'master') {
+            $this->authorize('create', Translate::class);
+            GitJob::dispatch('gitMasterPush', $request->input('repo', ''))->delay(now()->addSecond(1));
+        }
+        if ($request->input('type', '') == 'develop') {
+            File::where('is_file', 1)->each(
+                function (File $file) {
+                    $this->exportFile($file);
+                }
+            );
+
+            GitJob::dispatch('gitDevelopPush', auth()->user()->name . ' ' . auth()->user()->email . ' (Экспорт) #' . auth()->user()->id)->delay(now()->addSecond(1));
+        }
     }
 
     public function dashboard() {

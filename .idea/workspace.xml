@@ -25,6 +25,8 @@
     <list default="true" id="567ce022-64d7-4c9b-bb74-599cf91022ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-element/src/views/dashboard/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/dashboard/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +264,7 @@
       <workItem from="1617340854488" duration="10098000" />
       <workItem from="1617479892797" duration="268000" />
       <workItem from="1617537196458" duration="3342000" />
-      <workItem from="1617879675109" duration="5326000" />
+      <workItem from="1617879675109" duration="9462000" />
     </task>
     <servers />
   </component>
@@ -297,10 +299,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="697" y="197" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617879744836" />
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617886993119">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617950785447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617886993119" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617950785447" />
     <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617342147508" />
     <state x="2669" y="373" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#0" timestamp="1617287302676">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -310,25 +312,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617880004056" />
-    <state width="1876" height="275" key="GridCell.Tab.0.bottom" timestamp="1617689021323">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom" timestamp="1617951427473">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617537276849" />
+    <state width="1877" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617951427473" />
     <state width="1876" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617689021323" />
-    <state width="1876" height="275" key="GridCell.Tab.0.center" timestamp="1617689021323">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center" timestamp="1617951427472">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617537276848" />
+    <state width="1877" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617951427472" />
     <state width="1876" height="275" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617689021323" />
-    <state width="1876" height="275" key="GridCell.Tab.0.left" timestamp="1617689021322">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left" timestamp="1617951427472">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617537276848" />
+    <state width="1877" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617951427472" />
     <state width="1876" height="275" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617689021322" />
-    <state width="1876" height="275" key="GridCell.Tab.0.right" timestamp="1617689021323">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right" timestamp="1617951427472">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617537276849" />
+    <state width="1877" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617951427472" />
     <state width="1876" height="275" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617689021323" />
     <state x="540" y="263" key="IDE.errors.dialog" timestamp="1617017208148">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -360,10 +362,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2184" y="124" width="583" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617217730945" />
-    <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617369287167">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617949968389">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617279079881" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617949968389" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617369287167" />
   </component>
 </project>
