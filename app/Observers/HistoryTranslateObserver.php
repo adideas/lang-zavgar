@@ -17,7 +17,7 @@ class HistoryTranslateObserver
         $modified = array_slice_key($model->getAttributes(), $keys);
 
         foreach (array_keys(array_replace(array_diff($original, $modified), array_diff($modified, $original))) as $_ => $key) {
-            dd(HistoryTranslate::create(
+            HistoryTranslate::create(
                 array_replace([
                     'user_id'                        => $model->user_id,
                     'language_id'                    => intval($key),
@@ -27,7 +27,7 @@ class HistoryTranslateObserver
                     'new'                            => $modified[$key],
                     'date'                           => now()
                 ],DiffText::text($original[$key], $modified[$key]))
-            ));
+            );
         }
     }
 }
