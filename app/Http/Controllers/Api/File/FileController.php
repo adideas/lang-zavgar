@@ -33,6 +33,7 @@ class FileController extends Controller
     public function index(Request $request, FileFilter $fileFilter)
     {
         $this->authorize('viewAny', File::class);
+
         return FileAndChild::filter($fileFilter)->whereNull('parent')->get();
     }
 
@@ -55,7 +56,10 @@ class FileController extends Controller
             );
         }
 
-        GitJob::dispatch('gitDevelopPush', auth()->user()->name . ' ' . auth()->user()->email . ' (Создание) #' . auth()->user()->id)->delay(now()->addSecond(1));
+        GitJob::dispatch(
+            'gitDevelopPush',
+            auth()->user()->name . ' ' . auth()->user()->email . ' (Создание) #' . auth()->user()->id
+        )->delay(now()->addSecond(1));
 
         return $return;
     }
@@ -91,7 +95,10 @@ class FileController extends Controller
             );
         }
 
-        GitJob::dispatch('gitDevelopPush', auth()->user()->name . ' ' . auth()->user()->email . ' (Обновление) #' . auth()->user()->id)->delay(now()->addSecond(1));
+        GitJob::dispatch(
+            'gitDevelopPush',
+            auth()->user()->name . ' ' . auth()->user()->email . ' (Обновление) #' . auth()->user()->id
+        )->delay(now()->addSecond(1));
 
         return $return;
     }
@@ -113,7 +120,10 @@ class FileController extends Controller
                 }
             );
         }
-        GitJob::dispatch('gitDevelopPush', auth()->user()->name . ' ' . auth()->user()->email . ' (Удаление) #' . auth()->user()->id)->delay(now()->addSecond(1));
+        GitJob::dispatch(
+            'gitDevelopPush',
+            auth()->user()->name . ' ' . auth()->user()->email . ' (Удаление) #' . auth()->user()->id
+        )->delay(now()->addSecond(1));
     }
 
     public function deleteKey(Key $key, Request $request)
@@ -218,7 +228,7 @@ class FileController extends Controller
         $key = Key::create(
             [
                 'name'        => $request->input('data.name'),
-                'description' => $request->input('data.description', $request->input('data.name')),
+                'description' => $request->input('data.description') ?? $request->input('data.name'),
                 'file_id'     => $request->input('file_id'),
                 'parent'      => $request->input('parent'),
                 'indexed'     => [$request->input('data.name')],
@@ -230,6 +240,22 @@ class FileController extends Controller
         }
 
         $this->exportFile($key->file);
+
+        $return = KeyAndChild::find($key->id);
+
+        if ($request->input('data.value')) {
+            Translate::updateOrCreate(
+                [
+                    'key_id' => $return->id
+                ],
+                [
+                    'key_id' => $return->id,
+                    'file_id' => $return->file_id,
+                    'user_id' => auth()->user()->id,
+                    '01' => $request->input('data.value')
+                ]
+            );
+        }
 
         return KeyAndChild::find($key->id);
     }
@@ -300,15 +326,15 @@ class FileController extends Controller
 
     public function copyMoveKeyFile($file, $key, $move)
     {
-        $old_id_file = $key->file->id;
-        $new_id_file = $file->id;
+        $old_id_file  = $key->file->id;
+        $new_id_file  = $file->id;
         $key->file_id = $new_id_file;
         $key->indexed = [$key->name];
-        $key->parent = null;
+        $key->parent  = null;
         $key->save();
         Translate::where(['file_id' => $old_id_file, 'key_id' => $key->id])->update(['file_id' => $new_id_file]);
 
-        if($key->parent_key) {
+        if ($key->parent_key) {
             $this->reIndexedChildrenKey($key->parent_key);
         }
         $this->exportFile(File::find($old_id_file));
@@ -317,14 +343,14 @@ class FileController extends Controller
 
     public function copyMoveKeyKey($key, $parent, $move)
     {
-        $old_id_file = $key->file->id;
-        $new_id_file = $parent->file->id;
-        $key->parent = $parent->id;
+        $old_id_file  = $key->file->id;
+        $new_id_file  = $parent->file->id;
+        $key->parent  = $parent->id;
         $key->indexed = [$key->name];
         $key->save();
         Translate::where(['file_id' => $old_id_file, 'key_id' => $key->id])->update(['file_id' => $new_id_file]);
 
-        if($key->parent_key) {
+        if ($key->parent_key) {
             $this->reIndexedChildrenKey($key->parent_key);
         }
 

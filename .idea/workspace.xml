@@ -24,9 +24,7 @@
   <component name="ChangeListManager">
     <list default="true" id="567ce022-64d7-4c9b-bb74-599cf91022ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Translate/TranslateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/components/FileReader/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-element/src/views/dashboard/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-element/src/views/dashboard/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +208,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="js.ns.project" value="true" />
     <property name="js.ns.project.flavor" value="JavaScript" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lang-zavgar-back" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -264,7 +262,14 @@
       <workItem from="1617340854488" duration="10098000" />
       <workItem from="1617479892797" duration="268000" />
       <workItem from="1617537196458" duration="3342000" />
-      <workItem from="1617879675109" duration="9462000" />
+      <workItem from="1617879675109" duration="10732000" />
+      <workItem from="1618480223257" duration="168000" />
+      <workItem from="1618494978742" duration="5000" />
+      <workItem from="1619538634722" duration="37000" />
+      <workItem from="1619959016165" duration="61000" />
+      <workItem from="1620222938634" duration="48000" />
+      <workItem from="1621598232448" duration="728000" />
+      <workItem from="1623741092724" duration="3164000" />
     </task>
     <servers />
   </component>
@@ -281,6 +286,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1617199258675">
@@ -358,14 +364,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-8" y="-8" width="1413" height="665" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617219250432" />
-    <state x="2184" y="124" width="583" height="566" key="find.popup" timestamp="1617217730945">
+    <state x="2184" y="124" width="583" height="566" key="find.popup" timestamp="1623768038621">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2184" y="124" width="583" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617217730945" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1617949968389">
+    <state x="2184" y="124" width="583" height="566" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623768038621" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1623766203567">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1617949968389" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1623766203567" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1617369287167" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/Api/File/FileController.php</url>
+          <line>54</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
