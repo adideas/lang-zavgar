@@ -56,10 +56,10 @@ class FileController extends Controller
             );
         }
 
-        GitJob::dispatch(
+        /*GitJob::dispatch(
             'gitDevelopPush',
             auth()->user()->name . ' ' . auth()->user()->email . ' (Создание) #' . auth()->user()->id
-        )->delay(now()->addSecond(1));
+        )->delay(now()->addSecond(1));*/
 
         return $return;
     }
@@ -95,10 +95,10 @@ class FileController extends Controller
             );
         }
 
-        GitJob::dispatch(
+        /*GitJob::dispatch(
             'gitDevelopPush',
             auth()->user()->name . ' ' . auth()->user()->email . ' (Обновление) #' . auth()->user()->id
-        )->delay(now()->addSecond(1));
+        )->delay(now()->addSecond(1));*/
 
         return $return;
     }
@@ -120,10 +120,10 @@ class FileController extends Controller
                 }
             );
         }
-        GitJob::dispatch(
+        /*GitJob::dispatch(
             'gitDevelopPush',
             auth()->user()->name . ' ' . auth()->user()->email . ' (Удаление) #' . auth()->user()->id
-        )->delay(now()->addSecond(1));
+        )->delay(now()->addSecond(1));*/
     }
 
     public function deleteKey(Key $key, Request $request)
