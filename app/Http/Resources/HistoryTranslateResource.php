@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Http\Filters\Filter\HistoryTranslateFilter;
 use App\Models\HistoryTranslate;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -11,8 +12,11 @@ class HistoryTranslateResource extends JsonResource
     public static function collection($resource)
     {
         if ($resource instanceof LengthAwarePaginator) {
+            $count = HistoryTranslate::distinct('date', 'user_id')
+                ->filter(new HistoryTranslateFilter(request()))
+                ->get()->count();
             return parent::collection(
-                new LengthAwarePaginator($resource->items(), $resource->count(), $resource->perPage())
+                new LengthAwarePaginator($resource->items(), $count, $resource->perPage())
             );
         }
 
