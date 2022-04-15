@@ -15,6 +15,19 @@
         </template>
       </el-table-column>
 
+      <el-table-column>
+        <template slot-scope="row">
+          <el-col v-if="row.row.root">
+            ADMIN
+          </el-col>
+          <el-col v-else>
+            <el-col v-for="(label, index) in row.row.access" :key="index">
+              {{ label }}
+            </el-col>
+          </el-col>
+        </template>
+      </el-table-column>
+
       <el-table-column prop="email" label="email" />
       <el-table-column prop="name" label="name" />
       <el-table-column label="last time">
@@ -38,11 +51,11 @@
       <el-pagination
         :page-sizes="[10, 25, 50]"
         :page-size="query.to"
-        :total="users.total"
+        :total="users.meta.total"
         background
         style="text-align: center; position: fixed; width: 100%; bottom: 15px;"
         layout="total, sizes, prev, pager, next"
-        :current-page="users.current_page"
+        :current-page="users.meta.current_page"
         @size-change="(e) => { query.to = e; getList() }"
         @current-change="(e) => { query.page = e; getList() }"
       />

@@ -22,6 +22,5 @@ class HistoryTranslateController extends Controller
             ->paginate($request->to ?: 10);
 
         return HistoryTranslateResource::collection($data);
-        //
     }
 }

@@ -16,11 +16,17 @@
               <el-input v-model="form.name" />
             </el-form-item>
 
-            <el-form-item label="Email">
-              <el-input v-model="form.email" />
+            <el-form-item label="Почта">
+              <div style="overflow: hidden; width: 0;">
+                <input id="email" type="email" name="email" style="width: 100px; background: #fff; border: none;">
+              </div>
+              <el-input v-model="form.email" name="valueFor" />
             </el-form-item>
 
-            <el-form-item label="Пароль">
+            <el-form-item label="Пароль" :show-message="showErrors('password')!==''" :error="showErrors('password')">
+              <div style="overflow: hidden; width: 0;">
+                <input id="password" type="password" name="password" style="width: 100px; background: #fff; border: none;">
+              </div>
               <el-input v-model="form.password" :type="show_password ? 'text' : 'password'">
                 <template slot="append">
                   <el-button icon="el-icon-view" @click="show_password = !show_password" />
@@ -28,7 +34,7 @@
               </el-input>
             </el-form-item>
 
-            <el-form-item label="Старый пароль">
+            <el-form-item v-if="showInputPasswordConfirm" label="Старый пароль">
               <el-input v-model="form.confirm_password" :type="show_password ? 'text' : 'password'">
                 <template slot="append">
                   <el-button icon="el-icon-view" @click="show_password = !show_password" />
@@ -51,9 +57,11 @@
 
 <script>
 import { show, update, list } from '@/api/api-laravel'
+import showErrors from '@/mixins/showErrors'
 
 export default {
   name: 'UserEdit',
+  mixins: [showErrors],
   data() {
     return {
       loading: true,
@@ -66,6 +74,11 @@ export default {
         name: '',
         access_id: []
       }
+    }
+  },
+  computed: {
+    showInputPasswordConfirm() {
+      return !this.$isRootUser()
     }
   },
   created() {
@@ -83,6 +96,8 @@ export default {
     createUser() {
       update('user', this.$route.params.id, this.form).then(res => {
         this.$router.back()
+      }).catch(err => {
+        this.errors = err.errors
       })
     }
   }

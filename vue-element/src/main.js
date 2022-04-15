@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Cookies from 'js-cookie'
 import Element from 'element-ui'
+import locale from 'element-ui/lib/locale/lang/en'
 import App from './App'
 import store from './store'
 import router from './router'
@@ -16,8 +17,7 @@ import './pusher' // permission control
 import './components/HeaderSticky' // Липкий хеадер
 Vue.use(Query)
 Vue.use(Element, {
-  size: Cookies.get('size') || 'medium',
-  locale: require('element-ui/lib/locale/lang/ru-RU')
+  size: Cookies.get('size') || 'medium', locale
 })
 
 Vue.config.productionTip = false

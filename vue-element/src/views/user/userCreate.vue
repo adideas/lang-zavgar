@@ -16,11 +16,17 @@
               <el-input v-model="form.name" />
             </el-form-item>
 
-            <el-form-item label="Email">
+            <el-form-item label="Почта">
+              <div style="overflow: hidden; width: 0;">
+                <input id="email" type="email" name="email" style="width: 100px; background: #fff; border: none;">
+              </div>
               <el-input v-model="form.email" />
             </el-form-item>
 
             <el-form-item label="Пароль">
+              <div style="overflow: hidden; width: 0;">
+                <input id="password" type="password" name="password" style="width: 100px; background: #fff; border: none;">
+              </div>
               <el-input v-model="form.password" :type="show_password ? 'text' : 'password'">
                 <template slot="append">
                   <el-button icon="el-icon-view" @click="show_password = !show_password" />

@@ -1,6 +1,8 @@
 import { logout, getUserInfo, getTokenFromPassport } from '@/api/auth'
 import { get_access_token, set_access_token, remove_access_token } from '@/utils/auth'
 import { resetRouter } from '@/router'
+import store from '@/store'
+import Vue from 'vue'
 
 export default {
   namespaced: true,
@@ -69,4 +71,13 @@ export default {
       })
     }
   }
+}
+
+Vue.prototype.$isRootUser = function() {
+  if (store.state.user) {
+    if (store.state.user.access) {
+      return store.state.user.access.root || false
+    }
+  }
+  return false
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Api\User\UserListResource;
 use App\Models\Access;
 use App\Models\File;
 use App\Models\Language;
@@ -20,7 +21,11 @@ class UserController extends Controller
     public function index(Request $request)
     {
         if ($request->input('to')) {
-            return User::paginate($request->input('to', 10));
+            return UserListResource::collection(
+                User::paginate(
+                    $request->input('to', 10)
+                )
+            );
         }
 
         return User::all();
@@ -28,6 +33,7 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+
         $user = User::create(
             [
                 'name'     => $request->input('name', $request->input('email')),
@@ -50,13 +56,26 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
+        $access = auth()->user()->getAccess();
+        $root = isset($access['root']) ? $access['root'] : false;
         //
         $data          = [];
         $data['name']  = $request->input('name');
         $data['email'] = $request->input('email');
 
         if ($request->has('password') && $request->input('password')) {
-            if (Hash::check($request->input('confirm_password'), $user->password)) {
+            // Если рут пользователь не спрашивать подтверждение пароля
+            if (!$root) {
+                if (Hash::check($request->input('confirm_password'), $user->password)) {
+                    $data['password'] = bcrypt($request->input('password'));
+                } else {
+                    return response()->json(["errors" => [
+                        "password" => [
+                            "password no correct"
+                        ]
+                    ]], 419);
+                }
+            } else {
                 $data['password'] = bcrypt($request->input('password'));
             }
         }
