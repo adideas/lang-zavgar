@@ -24,7 +24,7 @@
         Показать
       </el-button>
     </div>
-    <div>
+    <div style="margin: 0 0 100px 0">
       <el-table v-if="history_translate.data" :data="history_translate.data" :summary-method="getSummaries" show-summary>
         <el-table-column prop="user_name" label="Пользователь" />
         <el-table-column prop="date" label="Период" />
