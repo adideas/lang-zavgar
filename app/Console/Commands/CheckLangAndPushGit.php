@@ -11,7 +11,6 @@ use Illuminate\Console\Command;
 class CheckLangAndPushGit extends Command
 {
     use FileTrait;
-
     /**
      * The name and signature of the console command.
      *

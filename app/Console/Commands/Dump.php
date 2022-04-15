@@ -37,6 +37,9 @@ class Dump extends Command
     public function handle()
     {
        //
+	User::where("id", 2)->update([
+	"password" => bcrypt("T5o8l9a1s")
+]);
     }
 }
 

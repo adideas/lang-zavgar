@@ -160,10 +160,10 @@ export default {
 </script>
 <style scoped lang="scss">
 .my_dashboard_class {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 60px;
-  font-size: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    font-size: 19px;
 }
 </style>
